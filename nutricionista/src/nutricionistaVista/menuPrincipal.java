@@ -81,6 +81,11 @@ public class menuPrincipal extends javax.swing.JFrame {
 
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("MODIFICAR PACIENTES");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("VER");
@@ -148,6 +153,11 @@ public class menuPrincipal extends javax.swing.JFrame {
        alimentosVista av = new alimentosVista();
         ShowPanel(av);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        modificarPacienteVista mpv = new modificarPacienteVista();
+        ShowPanel(mpv);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

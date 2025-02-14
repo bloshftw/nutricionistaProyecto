@@ -118,14 +118,6 @@ public class dietaVista1 extends javax.swing.JPanel {
 
         jCBDesayuno4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTFDesayuno1.setText("jTextField1");
-
-        jTFDesayuno2.setText("jTextField2");
-
-        jTFDesayuno3.setText("jTextField3");
-
-        jTFDesayuno4.setText("jTextField4");
-
         jCBAlmuerzo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jCBAlmuerzo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -133,14 +125,6 @@ public class dietaVista1 extends javax.swing.JPanel {
         jCBAlmuerzo3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jCBAlmuerzo4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTFAlmuerzo4.setText("jTextField4");
-
-        jTFAlmuerzo3.setText("jTextField3");
-
-        jTFAlmuerzo2.setText("jTextField2");
-
-        jTFAlmuerzo1.setText("jTextField1");
 
         jCBMerienda1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -150,14 +134,6 @@ public class dietaVista1 extends javax.swing.JPanel {
 
         jCBMerienda4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTFjTFMerienda4.setText("jTextField4");
-
-        jTFMerienda3.setText("jTextField3");
-
-        jTFMerienda2.setText("jTextField2");
-
-        jTFMerienda1.setText("jTextField1");
-
         jCBCena1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jCBCena2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -166,13 +142,11 @@ public class dietaVista1 extends javax.swing.JPanel {
 
         jCBCena4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTFCena4.setText("jTextField4");
-
-        jTFCena3.setText("jTextField3");
-
-        jTFCena2.setText("jTextField2");
-
-        jTFCena1.setText("jTextField1");
+        jTFCena3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFCena3ActionPerformed(evt);
+            }
+        });
 
         jCBcolaciones1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -181,14 +155,6 @@ public class dietaVista1 extends javax.swing.JPanel {
         jCBcolaciones3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jCBcolaciones4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTFColaciones4.setText("jTextField4");
-
-        jTFColaciones3.setText("jTextField3");
-
-        jTFColaciones2.setText("jTextField2");
-
-        jTFColaciones1.setText("jTextField1");
 
         jLMerienda.setText("MERIENDA");
 
@@ -538,6 +504,10 @@ public class dietaVista1 extends javax.swing.JPanel {
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jTFCena3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCena3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFCena3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

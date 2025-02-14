@@ -31,7 +31,6 @@ public class alimentosVista extends javax.swing.JPanel {
         InputJTTipoDeComida = new javax.swing.JTextField();
         InputJTCalorias = new javax.swing.JTextField();
         InputJTDetalle = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
         InputCBAptoVegetarianos = new javax.swing.JCheckBox();
@@ -88,8 +87,6 @@ public class alimentosVista extends javax.swing.JPanel {
         jLLacteo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLLacteo.setText("Lacteo:");
 
-        jLabel11.setText("Kcal");
-
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,19 +141,17 @@ public class alimentosVista extends javax.swing.JPanel {
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLTipoDeComida)
                                         .addGap(18, 18, 18)
-                                        .addComponent(InputJTTipoDeComida, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLCalorias)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(InputJTCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel11)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(InputJTTipoDeComida, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(16, 16, 16)
                                 .addComponent(jLabel7))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLDetalle)
                                 .addGap(18, 18, 18)
-                                .addComponent(InputJTDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(InputJTDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLCalorias)
+                                .addGap(18, 18, 18)
+                                .addComponent(InputJTCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jLTituloAgregarAlimentos, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -190,8 +185,7 @@ public class alimentosVista extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLCalorias)
-                            .addComponent(InputJTCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
+                            .addComponent(InputJTCalorias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLDetalle)
@@ -422,69 +416,19 @@ public class alimentosVista extends javax.swing.JPanel {
     private javax.swing.JTextField InputJTDetalle;
     private javax.swing.JTextField InputJTNombre;
     private javax.swing.JTextField InputJTTipoDeComida;
-    private javax.swing.JCheckBox OutputCBAptoVegetariano;
-    private javax.swing.JCheckBox OutputCBAptoVegetariano1;
-    private javax.swing.JCheckBox OutputCBAptoVegetariano2;
-    private javax.swing.JCheckBox OutputCBAptoVegetariano3;
-    private javax.swing.JCheckBox OutputCBAptoVegetariano4;
     private javax.swing.JCheckBox OutputCBAptoVegetariano5;
-    private javax.swing.JCheckBox OutputCBLacteo;
-    private javax.swing.JCheckBox OutputCBLacteo1;
-    private javax.swing.JCheckBox OutputCBLacteo2;
-    private javax.swing.JCheckBox OutputCBLacteo3;
-    private javax.swing.JCheckBox OutputCBLacteo4;
     private javax.swing.JCheckBox OutputCBLacteo5;
-    private javax.swing.JCheckBox OutputCBLibreDeTacc;
-    private javax.swing.JCheckBox OutputCBLibreDeTacc1;
-    private javax.swing.JCheckBox OutputCBLibreDeTacc2;
-    private javax.swing.JCheckBox OutputCBLibreDeTacc3;
-    private javax.swing.JCheckBox OutputCBLibreDeTacc4;
     private javax.swing.JCheckBox OutputCBLibreDeTacc5;
-    private javax.swing.JTextField OutputJTCalorias;
-    private javax.swing.JTextField OutputJTCalorias1;
-    private javax.swing.JTextField OutputJTCalorias2;
-    private javax.swing.JTextField OutputJTCalorias3;
-    private javax.swing.JTextField OutputJTCalorias4;
     private javax.swing.JTextField OutputJTCalorias5;
-    private javax.swing.JTextField OutputJTDetalle;
-    private javax.swing.JTextField OutputJTDetalle1;
-    private javax.swing.JTextField OutputJTDetalle2;
-    private javax.swing.JTextField OutputJTDetalle3;
-    private javax.swing.JTextField OutputJTDetalle4;
     private javax.swing.JTextField OutputJTDetalle5;
-    private javax.swing.JTextField OutputJTNombre;
-    private javax.swing.JTextField OutputJTNombre1;
-    private javax.swing.JTextField OutputJTNombre2;
-    private javax.swing.JTextField OutputJTNombre3;
-    private javax.swing.JTextField OutputJTNombre4;
     private javax.swing.JTextField OutputJTNombre5;
-    private javax.swing.JTextField OutputJTTipoDeComida;
-    private javax.swing.JTextField OutputJTTipoDeComida1;
-    private javax.swing.JTextField OutputJTTipoDeComida2;
-    private javax.swing.JTextField OutputJTTipoDeComida3;
-    private javax.swing.JTextField OutputJTTipoDeComida4;
     private javax.swing.JTextField OutputJTTipoDeComida5;
     private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnEliminar1;
-    private javax.swing.JButton btnEliminar2;
-    private javax.swing.JButton btnEliminar3;
-    private javax.swing.JButton btnEliminar4;
     private javax.swing.JButton btnEliminar5;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JButton btnModificar;
-    private javax.swing.JButton btnModificar1;
-    private javax.swing.JButton btnModificar2;
-    private javax.swing.JButton btnModificar3;
-    private javax.swing.JButton btnModificar4;
     private javax.swing.JButton btnModificar5;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> jCBSeleccionarAlimento;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLAptoParaVeg;
     private javax.swing.JLabel jLAptoParaVegetariano2;
     private javax.swing.JLabel jLCalorias;
@@ -502,61 +446,10 @@ public class alimentosVista extends javax.swing.JPanel {
     private javax.swing.JLabel jLTituloAgregarAlimentos;
     private javax.swing.JLabel jLTituloAgregarAlimentos1;
     private javax.swing.JLabel jLTituloAlimento;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLnombe1;
     private javax.swing.JPanel jP2;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }
