@@ -1,21 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package nutricionistaVista;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Lucia
- */
+
 public class menuPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form menuPrincipal
-     */
     public menuPrincipal() {
         initComponents();
         
@@ -143,7 +134,8 @@ public class menuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+       dietaVista1 dt1 = new dietaVista1();
+       ShowPanel(dt1);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
