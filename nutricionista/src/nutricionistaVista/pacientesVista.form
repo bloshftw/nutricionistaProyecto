@@ -24,21 +24,30 @@
                       <Component id="jLNombre" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="inputPesoActual" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="inputAltura" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLcm" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLKGActual" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="inputEdad" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                           <Component id="inputNombre" alignment="0" max="32767" attributes="0"/>
                           <Component id="inputApellido" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLtituloPaciente" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="inputPesoActual" max="32767" attributes="0"/>
+                                  <Component id="inputAltura" max="32767" attributes="0"/>
+                                  <Component id="inputEdad" max="32767" attributes="0"/>
+                                  <Component id="inputPesoBuscado" min="-2" pref="154" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLKGActual" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLKGBuscado" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLcm" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -47,24 +56,19 @@
                       <Component id="jLEdad" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLApellido" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLGenero" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="inputMujer" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="inputHombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLPesoBuscado" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="inputPesoBuscado" min="-2" pref="64" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLGenero" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="inputMujer" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputHombre" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLKGBuscado" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jLPesoBuscado" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -288,8 +292,6 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="inputVegetariano2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="inputVegano2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -300,17 +302,14 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="inputCeliaco2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="inputIntolerante2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="inputVegetariano2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="inputVegano2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
+                  <Component id="inputVegetariano2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -329,11 +328,6 @@
         <Component class="javax.swing.JRadioButton" name="inputIntolerante2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Intolerante a la lactosa"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JRadioButton" name="inputVegano2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Vegano"/>
           </Properties>
         </Component>
       </SubComponents>
