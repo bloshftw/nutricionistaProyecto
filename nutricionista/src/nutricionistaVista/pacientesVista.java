@@ -1,21 +1,45 @@
 package nutricionistaVista;
 
+import conexion.pacienteData;
+import entidades.paciente;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ferna
  */
 public class pacientesVista extends javax.swing.JPanel {
 
+    private pacienteData pacientedatax = new pacienteData();
+    private paciente pacienteActual = null;
 
+    
     public pacientesVista() {
         initComponents();
     }
+    
+    public void Limpiar(){
+ 
+        inputNombre.setText("");
+        inputApellido.setText("");
+        inputEdad.setText("");
+        inputAltura.setText("");
+        inputPesoActual.setText("");
+        inputPesoBuscado.setText("");
+        inputHombre.setSelected(false);
+        inputMujer.setSelected(false);
+        inputCeliaco2.setSelected(false);
+        inputVegetariano2.setSelected(false);
+        inputIntolerante2.setSelected(false);
 
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        botones = new javax.swing.ButtonGroup();
+        botonesCondicion = new javax.swing.ButtonGroup();
         jLtituloPaciente = new java.awt.Label();
         jLNombre = new javax.swing.JLabel();
         inputNombre = new javax.swing.JTextField();
@@ -79,6 +103,7 @@ public class pacientesVista extends javax.swing.JPanel {
 
         jLKGBuscado.setText("KG");
 
+        botones.add(inputHombre);
         inputHombre.setText("Hombre");
         inputHombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +113,7 @@ public class pacientesVista extends javax.swing.JPanel {
 
         jLGenero.setText("Genero:");
 
+        botones.add(inputMujer);
         inputMujer.setText("Mujer");
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nutricionista.png"))); // NOI18N
@@ -96,10 +122,13 @@ public class pacientesVista extends javax.swing.JPanel {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        botonesCondicion.add(inputCeliaco2);
         inputCeliaco2.setText("Celiaco");
 
+        botonesCondicion.add(inputVegetariano2);
         inputVegetariano2.setText("Vegetariano");
 
+        botonesCondicion.add(inputIntolerante2);
         inputIntolerante2.setText("Intolerante a la lactosa");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -284,11 +313,78 @@ public class pacientesVista extends javax.swing.JPanel {
     }//GEN-LAST:event_inputHombreActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-
+        Limpiar();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
 
+        try{
+            String nombre = inputNombre.getText();
+            String apellido = inputApellido.getText();
+            Integer edad =  Integer.parseInt(inputEdad.getText());
+            Integer altura =  Integer.parseInt(inputAltura.getText()) ;
+            float pesoActual =  Float.parseFloat(inputPesoActual.getText());
+            float pesoBuscado =  Float.parseFloat(inputPesoBuscado.getText());
+            
+            
+            //Funcion para la seleccion de botones en genero
+            
+            botones.add(inputHombre);
+            botones.add(inputMujer);
+            
+            String sexo = "";
+            if(inputHombre.isSelected()){
+                sexo = "Hombre";
+            } else if (inputMujer.isSelected()){
+            sexo = "Mujer";
+            } else if (inputHombre.isSelected() && inputMujer.isSelected()){
+            JOptionPane.showMessageDialog(this, "Por favor, seleccione solo un sexo");
+            inputHombre.setSelected(false);
+            inputMujer.setSelected(false);
+            } else {
+            JOptionPane.showMessageDialog(this, "El campo genero no puede quedar vacio");
+            }
+            
+ 
+            //Funcion para la seleccion de condicionEspecial y concatenacion de la misma en caso de ser varias
+            botonesCondicion.add(inputCeliaco2);
+            botonesCondicion.add(inputIntolerante2);
+            botonesCondicion.add(inputVegetariano2);
+            
+            String condicionEspecial = "";
+            
+            if(inputCeliaco2.isSelected()){
+                condicionEspecial = "Celiaco";
+            }
+            if(inputIntolerante2.isSelected()){
+                condicionEspecial += " / Intolerante a la lactosa";  
+            }
+            if(inputVegetariano2.isSelected()){
+                condicionEspecial += " / Vegetariano";  
+}
+            
+            
+
+            /*SE CREA EL PACIENTE EN EL OBJETO DE LA VISTA Y SE ASIGNA*/
+
+            if (pacienteActual == null){
+
+                pacienteActual = new paciente(nombre, apellido, edad, altura, pesoActual, pesoBuscado, sexo ,condicionEspecial);
+                pacientedatax.agregarPaciente(pacienteActual);
+            } else {
+                pacienteActual.setNombre(nombre);
+                pacienteActual.setApellido(apellido);
+                pacienteActual.setAltura(altura);
+                pacienteActual.setSexo(sexo);
+                pacienteActual.setPesoActual(pesoActual);
+                pacienteActual.setPesoBuscado(pesoBuscado);
+                pacienteActual.setCondicion(condicionEspecial);
+
+            }
+
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, " ERROR ");}
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -297,6 +393,8 @@ public class pacientesVista extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup botones;
+    private javax.swing.ButtonGroup botonesCondicion;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnSalir;
