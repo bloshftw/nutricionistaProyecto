@@ -4,15 +4,19 @@
  */
 package nutricionistaVista.alimentos;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author ferna
  */
 public class alimentosBuscar extends javax.swing.JPanel {
 
-    /**
-     * Creates new form alimentosBuscar
-     */
+ 
+   
     public alimentosBuscar() {
         initComponents();
     }
@@ -26,7 +30,6 @@ public class alimentosBuscar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLTituloAlimento = new javax.swing.JLabel();
         jLTituloAgregarAlimentos1 = new javax.swing.JLabel();
         jCBSeleccionarAlimento = new javax.swing.JComboBox<>();
         jLSeleccionarAlimento = new javax.swing.JLabel();
@@ -45,10 +48,6 @@ public class alimentosBuscar extends javax.swing.JPanel {
         OutputCBLacteo5 = new javax.swing.JCheckBox();
         jLLacteo2 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
-
-        jLTituloAlimento.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLTituloAlimento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLTituloAlimento.setText("MENU DE ALIMENTOS");
 
         jLTituloAgregarAlimentos1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLTituloAgregarAlimentos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -94,27 +93,27 @@ public class alimentosBuscar extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLTituloAlimento, javax.swing.GroupLayout.DEFAULT_SIZE, 1075, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(459, 459, 459))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(379, 379, 379)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLTituloAgregarAlimentos1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLSeleccionarAlimento)
-                                    .addComponent(jLNombre2)
-                                    .addComponent(jLTipoComida2)
-                                    .addComponent(jLCalorias2)
-                                    .addComponent(jLDetalle2))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(OutputJTNombre5)
-                                    .addComponent(jCBSeleccionarAlimento, 0, 193, Short.MAX_VALUE)
-                                    .addComponent(OutputJTTipoDeComida5)
-                                    .addComponent(OutputJTCalorias5)
-                                    .addComponent(OutputJTDetalle5)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLSeleccionarAlimento)
+                            .addComponent(jLNombre2)
+                            .addComponent(jLTipoComida2)
+                            .addComponent(jLCalorias2)
+                            .addComponent(jLDetalle2))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(OutputJTNombre5)
+                            .addComponent(jCBSeleccionarAlimento, 0, 193, Short.MAX_VALUE)
+                            .addComponent(OutputJTTipoDeComida5)
+                            .addComponent(OutputJTCalorias5)
+                            .addComponent(OutputJTDetalle5)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(367, 367, 367)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -129,21 +128,18 @@ public class alimentosBuscar extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLLacteo2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(OutputCBLacteo5)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(459, 459, 459))
+                                .addComponent(OutputCBLacteo5))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(314, 314, 314)
+                        .addComponent(jLTituloAgregarAlimentos1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(322, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLTituloAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLTituloAgregarAlimentos1)
-                .addGap(30, 30, 30)
+                .addComponent(jLTituloAgregarAlimentos1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLSeleccionarAlimento)
                     .addComponent(jCBSeleccionarAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -175,7 +171,7 @@ public class alimentosBuscar extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(OutputCBLacteo5)
                     .addComponent(jLLacteo2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -209,6 +205,7 @@ public class alimentosBuscar extends javax.swing.JPanel {
     private javax.swing.JLabel jLTacc2;
     private javax.swing.JLabel jLTipoComida2;
     private javax.swing.JLabel jLTituloAgregarAlimentos1;
-    private javax.swing.JLabel jLTituloAlimento;
     // End of variables declaration//GEN-END:variables
+
+
 }

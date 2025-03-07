@@ -4,7 +4,11 @@
  */
 package nutricionistaVista;
 
+import Imagenes.JPanelImage;
 import java.awt.BorderLayout;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import nutricionistaVista.alimentos.alimentosAgregar;
 import nutricionistaVista.alimentos.alimentosBuscar;
@@ -25,10 +29,9 @@ import nutricionistaVista.paciente.pacienteModificar;
  */
 public class menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form menu
-     */
+ 
     public menu() {
+        
         initComponents();
         
         // Inicializacion de vistas
@@ -36,6 +39,8 @@ public class menu extends javax.swing.JFrame {
         ///content.add(, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
+        JPanelImage mImagen = new JPanelImage(content,"/Imagenes/fondoMain.jpeg");
+        content.add(mImagen).repaint();
         
     }
 
@@ -191,11 +196,11 @@ public class menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(content, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -204,11 +209,14 @@ public class menu extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         pacienteAgregar pAg = new pacienteAgregar();
         showPanel (pAg);
+        
+       
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         pacienteBuscar pBus = new pacienteBuscar();
         showPanel(pBus);
+       
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -303,6 +311,7 @@ public class menu extends javax.swing.JFrame {
         });
     }
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel content;
     private javax.swing.JMenu jMenu1;
@@ -325,4 +334,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
+
 }
+

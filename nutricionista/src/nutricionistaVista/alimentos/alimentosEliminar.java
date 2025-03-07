@@ -4,15 +4,16 @@
  */
 package nutricionistaVista.alimentos;
 
-/**
- *
- * @author ferna
- */
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
+
+
 public class alimentosEliminar extends javax.swing.JPanel {
 
-    /**
-     * Creates new form alimentosEliminar
-     */
+  
     public alimentosEliminar() {
         initComponents();
     }
@@ -26,7 +27,6 @@ public class alimentosEliminar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLTituloAlimento = new javax.swing.JLabel();
         jLTituloAgregarAlimentos1 = new javax.swing.JLabel();
         jCBSeleccionarAlimento1 = new javax.swing.JComboBox<>();
         jLSeleccionarAlimento1 = new javax.swing.JLabel();
@@ -47,13 +47,9 @@ public class alimentosEliminar extends javax.swing.JPanel {
         btnLimpiar = new javax.swing.JButton();
         btnModificar5 = new javax.swing.JButton();
 
-        jLTituloAlimento.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLTituloAlimento.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLTituloAlimento.setText("MENU DE ALIMENTOS");
-
         jLTituloAgregarAlimentos1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLTituloAgregarAlimentos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLTituloAgregarAlimentos1.setText("MODIfICAR");
+        jLTituloAgregarAlimentos1.setText("ELIMINAR");
 
         jCBSeleccionarAlimento1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,11 +98,6 @@ public class alimentosEliminar extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLTituloAlimento, javax.swing.GroupLayout.DEFAULT_SIZE, 1075, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(373, 373, 373)
-                .addComponent(jLTituloAgregarAlimentos1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(359, 359, 359)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,18 +133,19 @@ public class alimentosEliminar extends javax.swing.JPanel {
                         .addGap(136, 136, 136)
                         .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(107, 107, 107)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
                 .addComponent(btnModificar5, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLTituloAgregarAlimentos1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(333, 333, 333))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLTituloAlimento, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLTituloAgregarAlimentos1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLTituloAgregarAlimentos1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLSeleccionarAlimento1)
                     .addComponent(jCBSeleccionarAlimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -229,6 +221,8 @@ public class alimentosEliminar extends javax.swing.JPanel {
     private javax.swing.JLabel jLTacc3;
     private javax.swing.JLabel jLTipoComida3;
     private javax.swing.JLabel jLTituloAgregarAlimentos1;
-    private javax.swing.JLabel jLTituloAlimento;
     // End of variables declaration//GEN-END:variables
+
+
+
 }
