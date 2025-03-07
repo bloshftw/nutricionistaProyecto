@@ -1,5 +1,5 @@
 
-package nutricionistaVista;
+package caca;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;

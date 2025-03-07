@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package conexion;
 
 import entidades.paciente;
@@ -6,99 +10,91 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.List;
 
-
+/**
+ *
+ * @author ferna
+ */
 public class pacienteData {
     
-    
-        private Connection con = null;
-    
-    public pacienteData(){
-        con = Conexion.getConexion();
-    }
-    //agregar un paciente
-    public void agregarPaciente(paciente paciente){
-        String sql = "INSERT INTO paciente(nombre, apellido, edad, altura, pesoActuacl, pesoBuscado, condicion) VALUES"
-                + " (?, ?, ?, ?, ?, ?, ?, ?)";
-        
-        try{
-            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+    // Método para insertar un nuevo paciente en la base de datos
+    public boolean insertarPaciente(paciente paciente) {
+        String sql = "INSERT INTO Paciente (nombre, apellido, edad, peso, altura, sexo, objetivo, vegetariano, celiaco, intoleranteLactosa) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try (Connection con = Conexion.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            
             ps.setString(1, paciente.getNombre());
             ps.setString(2, paciente.getApellido());
             ps.setInt(3, paciente.getEdad());
-            ps.setInt(4, paciente.getAltura());
-            ps.setFloat(5, paciente.getPesoActual());
-            ps.setFloat(6, paciente.getPesoBuscado());
-            ps.setString(7, paciente.getSexo());
-            ps.setString(8, paciente.getCondicion());
-            ps.executeUpdate();
-
-            ResultSet rs = ps.getGeneratedKeys();
+            ps.setDouble(4, paciente.getPeso());
+            ps.setDouble(5, paciente.getAltura());
+            ps.setString(6, paciente.getSexo());
+            ps.setString(7, paciente.getObjetivo());
+            ps.setBoolean(8, paciente.isVegetariano());
+            ps.setBoolean(9, paciente.isCeliaco());
+            ps.setBoolean(10, paciente.isIntoleranteLactosa());
             
-            if(rs.next()){
-                paciente.setNroPaciente(rs.getInt(1));
-                JOptionPane.showMessageDialog(null," - Paciente añadido con exito.");
-            }
-            ps.close();
-            
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, " Error al acceder a la tabla paciente "+ex.getMessage());
-        }                   
-    }
-    
-    /*Llenar ComboBox con pacientes*/
-  
-    public void rellenarComboBox(String tabla, String valor, JComboBox combo){
-    
-        String sql = "SELECT * FROM " + tabla;
-        Statement st;
-        
-        try{
-            st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            
-            while(rs.next())
-            {
-            combo.addItem(rs.getString(valor));
-            
-            }
-        } catch(SQLException e){
-            
-            JOptionPane.showMessageDialog(null, "error" + e.toString());
-            
+            int filasAfectadas = ps.executeUpdate();
+            return filasAfectadas > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
     }
     
-    public paciente obtenerPacientePorNombre(String nombre) {
-        paciente paciente = null; 
-        String query = "SELECT * FROM paciente WHERE nombre = ?"; 
+       // Método para eliminar un paciente a partir de su id
+    public boolean eliminarPaciente(int idPaciente) {
+        String sql = "DELETE FROM Paciente WHERE idPaciente = ?";
+        try (Connection con = Conexion.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            
+            ps.setInt(1, idPaciente);
+            int filasAfectadas = ps.executeUpdate();
+            return filasAfectadas > 0;
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
-        try (PreparedStatement stmt = con.prepareStatement(query)) {
-            stmt.setString(1, nombre); 
-            ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-                int nroPaciente = rs.getInt("nroPaciente");
-                String apellido = rs.getString("apellido");
-                int edad = rs.getInt("edad");
-                int altura = rs.getInt("altura");
-                String sexo = rs.getString("sexo");
-                float pesoActual = rs.getFloat("pesoActual");
-                float pesoBuscado = rs.getFloat("pesoBuscado");
-                String condicionEspecial = rs.getString("condicionEspecial");
-
-          
-                paciente = new paciente(nroPaciente, nombre, apellido, edad, altura, pesoActual, pesoBuscado, sexo, condicionEspecial);
+    
+    // Método para obtener todos los pacientes
+    public List<paciente> obtenerPacientes() {
+        List<paciente> lista = new ArrayList<>();
+        String sql = "SELECT * FROM Paciente";
+        try (Connection con = Conexion.getConnection();
+             Statement st = con.createStatement();
+             ResultSet rs = st.executeQuery(sql)) {
+            
+            while (rs.next()) {
+                paciente p = new paciente(
+                        rs.getInt("idPaciente"),
+                        rs.getString("nombre"),
+                        rs.getString("apellido"),
+                        rs.getInt("edad"),
+                        rs.getDouble("peso"),
+                        rs.getDouble("altura"),
+                        rs.getString("sexo"),
+                        rs.getString("objetivo"),
+                        rs.getBoolean("vegetariano"),
+                        rs.getBoolean("celiaco"),
+                        rs.getBoolean("intoleranteLactosa")
+                );
+                lista.add(p);
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al obtener el paciente: " + e.getMessage());
+            e.printStackTrace();
         }
-
-
-        return paciente; 
+        return lista;
     }
-
     
+    // Métodos para actualizar y eliminar pacientes se pueden implementar de forma similar
 }
+    
+    
+    
+

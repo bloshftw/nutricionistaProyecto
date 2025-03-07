@@ -1,4 +1,4 @@
-package nutricionistaVista;
+package caca;
 
 import conexion.pacienteData;
 import entidades.paciente;
