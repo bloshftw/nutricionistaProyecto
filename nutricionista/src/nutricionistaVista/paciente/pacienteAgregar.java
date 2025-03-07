@@ -5,6 +5,9 @@
 package nutricionistaVista.paciente;
 
 import Imagenes.JPanelImage;
+import conexion.pacienteData;
+import entidades.paciente;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,9 +15,7 @@ import Imagenes.JPanelImage;
  */
 public class pacienteAgregar extends javax.swing.JPanel {
 
-    /**
-     * Creates new form pacienteAgregar
-     */
+    
     public pacienteAgregar() {
         initComponents();
         
@@ -38,22 +39,21 @@ public class pacienteAgregar extends javax.swing.JPanel {
         jLKGActual = new javax.swing.JLabel();
         inputPesoActual = new javax.swing.JTextField();
         jLPesoActual = new javax.swing.JLabel();
-        jLPesoBuscado = new javax.swing.JLabel();
-        inputPesoBuscado = new javax.swing.JTextField();
-        jLKGBuscado = new javax.swing.JLabel();
         inputHombre = new javax.swing.JRadioButton();
         jLGenero = new javax.swing.JLabel();
         inputMujer = new javax.swing.JRadioButton();
         jLabel13 = new javax.swing.JLabel();
         jLCondicionAlimenticia = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        inputCeliaco2 = new javax.swing.JRadioButton();
-        inputVegetariano2 = new javax.swing.JRadioButton();
-        inputIntolerante2 = new javax.swing.JRadioButton();
+        inputCeliaco = new javax.swing.JRadioButton();
+        inputVegetariano = new javax.swing.JRadioButton();
+        inputIntolerante = new javax.swing.JRadioButton();
         btnLimpiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLtituloPaciente = new java.awt.Label();
+        inputObjetivo = new javax.swing.JComboBox<>();
+        jLPesoActual1 = new javax.swing.JLabel();
 
         jLNombre.setText("Nombre:");
 
@@ -75,16 +75,6 @@ public class pacienteAgregar extends javax.swing.JPanel {
 
         jLPesoActual.setText("Peso Actual:");
 
-        jLPesoBuscado.setText("Peso Buscado:");
-
-        inputPesoBuscado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputPesoBuscadoActionPerformed(evt);
-            }
-        });
-
-        jLKGBuscado.setText("KG");
-
         inputHombre.setText("Hombre");
         inputHombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,11 +92,16 @@ public class pacienteAgregar extends javax.swing.JPanel {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        inputCeliaco2.setText("Celiaco");
+        inputCeliaco.setText("Celiaco");
 
-        inputVegetariano2.setText("Vegetariano");
+        inputVegetariano.setText("Vegetariano");
 
-        inputIntolerante2.setText("Intolerante a la lactosa");
+        inputIntolerante.setText("Intolerante a la lactosa");
+        inputIntolerante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputIntoleranteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -116,11 +111,11 @@ public class pacienteAgregar extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(inputCeliaco2)
+                        .addComponent(inputCeliaco)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(inputIntolerante2))
+                        .addComponent(inputIntolerante))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(inputVegetariano2)
+                        .addComponent(inputVegetariano)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -129,10 +124,10 @@ public class pacienteAgregar extends javax.swing.JPanel {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputCeliaco2)
-                    .addComponent(inputIntolerante2))
+                    .addComponent(inputCeliaco)
+                    .addComponent(inputIntolerante))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(inputVegetariano2)
+                .addComponent(inputVegetariano)
                 .addGap(25, 25, 25))
         );
 
@@ -161,6 +156,15 @@ public class pacienteAgregar extends javax.swing.JPanel {
         jLtituloPaciente.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLtituloPaciente.setText("Ingreso de datos de Paciente");
 
+        inputObjetivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"Subir de peso\"", "\"Bajar de peso\"", "\"Mantener peso\"" }));
+        inputObjetivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputObjetivoActionPerformed(evt);
+            }
+        });
+
+        jLPesoActual1.setText("Objetivo:");
+
         javax.swing.GroupLayout jPanelPacienteAgregarLayout = new javax.swing.GroupLayout(jPanelPacienteAgregar);
         jPanelPacienteAgregar.setLayout(jPanelPacienteAgregarLayout);
         jPanelPacienteAgregarLayout.setHorizontalGroup(
@@ -180,37 +184,35 @@ public class pacienteAgregar extends javax.swing.JPanel {
                                 .addGap(23, 23, 23)
                                 .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(inputNombre)
-                                    .addComponent(inputApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
-                                        .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(inputPesoActual)
-                                            .addComponent(inputAltura)
-                                            .addComponent(inputEdad)
-                                            .addComponent(inputPesoBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
-                                                .addGap(15, 15, 15)
-                                                .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLKGActual, javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLKGBuscado, javax.swing.GroupLayout.Alignment.TRAILING)))
-                                            .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLcm))))))
+                                    .addComponent(inputApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLPesoActual)
                                 .addComponent(jLAltura)
                                 .addComponent(jLEdad)
                                 .addComponent(jLApellido))
-                            .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
-                                    .addComponent(jLGenero)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(inputMujer)
-                                        .addComponent(inputHombre)))
-                                .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
-                                    .addComponent(jLPesoBuscado)
-                                    .addGap(76, 76, 76))))
+                            .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                                .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(jLGenero))
+                                    .addComponent(jLPesoActual1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                                        .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(inputPesoActual, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                                            .addComponent(inputAltura)
+                                            .addComponent(inputEdad)
+                                            .addComponent(inputObjetivo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                                                .addGap(15, 15, 15)
+                                                .addComponent(jLKGActual))
+                                            .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLcm))))
+                                    .addComponent(inputMujer)
+                                    .addComponent(inputHombre))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPacienteAgregarLayout.createSequentialGroup()
@@ -259,31 +261,34 @@ public class pacienteAgregar extends javax.swing.JPanel {
                 .addGap(23, 23, 23)
                 .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                        .addComponent(jLCondicionAlimenticia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25))
+                    .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
                         .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLPesoActual)
                             .addComponent(inputPesoActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLKGActual))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLPesoBuscado)
-                            .addComponent(inputPesoBuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLKGBuscado))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(inputHombre)
-                            .addComponent(jLGenero))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(inputMujer))
-                    .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
-                        .addComponent(jLCondicionAlimenticia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
+                        .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                                .addGap(96, 96, 96)
+                                .addComponent(jLGenero))
+                            .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(inputObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLPesoActual1))
+                                .addGap(18, 18, 18)
+                                .addComponent(inputHombre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inputMujer)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -302,10 +307,6 @@ public class pacienteAgregar extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNombreActionPerformed
 
-    private void inputPesoBuscadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPesoBuscadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputPesoBuscadoActionPerformed
-
     private void inputHombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputHombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputHombreActionPerformed
@@ -316,12 +317,50 @@ public class pacienteAgregar extends javax.swing.JPanel {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
 
-   
+        String nombre = inputNombre.getText();
+        String apellido = inputApellido.getText();
+        int edad = Integer.parseInt(inputEdad.getText());
+        double peso = Double.parseDouble(inputPesoActual.getText());
+        double altura = Double.parseDouble(inputAltura.getText());
+        String sexo = "";
+        
+        if (inputHombre.isSelected()){
+        sexo = "hombre";
+        } else if (inputMujer.isSelected()){
+        sexo = "mujer";
+        }
+        
+        String objetivo = (String) inputObjetivo.getSelectedItem();
+        boolean vegetariano = inputVegetariano.isSelected();
+        boolean celiaco = inputCeliaco.isSelected();
+        boolean intoleranteLactosa = inputIntolerante.isSelected();
+        
+        //Se crea el objeto paciente
+        paciente pac = new paciente(nombre, apellido, edad, peso, altura, sexo, objetivo, vegetariano, celiaco, intoleranteLactosa);
+        
+        //Se inicializa el objeto que contiene la funcion para insertar pacientes
+        pacienteData pacData = new pacienteData();
+        
+        boolean exito = pacData.insertarPaciente(pac);
+        
+        if (exito = true){
+        JOptionPane.showMessageDialog(this, "Paciente añadido con exito!");
+        } else {
+        JOptionPane.showMessageDialog(this, "Hubo un error al agregar el paciente");
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
 
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void inputObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputObjetivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputObjetivoActionPerformed
+
+    private void inputIntoleranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIntoleranteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputIntoleranteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -330,25 +369,24 @@ public class pacienteAgregar extends javax.swing.JPanel {
     private javax.swing.JButton btnSalir;
     private javax.swing.JTextField inputAltura;
     private javax.swing.JTextField inputApellido;
-    private javax.swing.JRadioButton inputCeliaco2;
+    private javax.swing.JRadioButton inputCeliaco;
     private javax.swing.JTextField inputEdad;
     private javax.swing.JRadioButton inputHombre;
-    private javax.swing.JRadioButton inputIntolerante2;
+    private javax.swing.JRadioButton inputIntolerante;
     private javax.swing.JRadioButton inputMujer;
     private javax.swing.JTextField inputNombre;
+    private javax.swing.JComboBox<String> inputObjetivo;
     private javax.swing.JTextField inputPesoActual;
-    private javax.swing.JTextField inputPesoBuscado;
-    private javax.swing.JRadioButton inputVegetariano2;
+    private javax.swing.JRadioButton inputVegetariano;
     private javax.swing.JLabel jLAltura;
     private javax.swing.JLabel jLApellido;
     private javax.swing.JLabel jLCondicionAlimenticia;
     private javax.swing.JLabel jLEdad;
     private javax.swing.JLabel jLGenero;
     private javax.swing.JLabel jLKGActual;
-    private javax.swing.JLabel jLKGBuscado;
     private javax.swing.JLabel jLNombre;
     private javax.swing.JLabel jLPesoActual;
-    private javax.swing.JLabel jLPesoBuscado;
+    private javax.swing.JLabel jLPesoActual1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLcm;
     private java.awt.Label jLtituloPaciente;
