@@ -83,7 +83,7 @@ public class menu extends javax.swing.JFrame {
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1081, Short.MAX_VALUE)
+            .addGap(0, 1080, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
