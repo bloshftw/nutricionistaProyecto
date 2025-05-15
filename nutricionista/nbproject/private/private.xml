@@ -3,18 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteModificar.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/dietas/dietasConsultarDieta.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/dietas/dietasModificarDieta.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/alimentos/alimentosAgregar.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteAgregar.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteBuscar.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteEliminar.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/dietas/dietasCrearDieta.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/alimentos/alimentosEliminar.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/menu.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/alimentos/alimentosBuscar.java</file>
-            <file>file:/C:/Users/ferna/Documents/GitHub/nutricionistaProyecto/nutricionista/src/nutricionistaVista/alimentos/alimentosModificar.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/conexion/Conexion.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/entidades/Main.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteEliminar.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteAgregar.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/menu.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/caca/menuPrincipal.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/caca/pacientesVista.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteModificar.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/conexion/testConexion.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/conexion/pacienteData.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/entidades/alimento.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/entidades/paciente.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteBuscar.java</file>
         </group>
     </open-files>
 </project-private>

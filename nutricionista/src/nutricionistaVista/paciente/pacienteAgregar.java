@@ -52,8 +52,10 @@ public class pacienteAgregar extends javax.swing.JPanel {
         btnGuardar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLtituloPaciente = new java.awt.Label();
-        inputObjetivo = new javax.swing.JComboBox<>();
         jLPesoActual1 = new javax.swing.JLabel();
+        inputSubirPeso = new javax.swing.JRadioButton();
+        inputBajarPeso = new javax.swing.JRadioButton();
+        inputMantenerPeso = new javax.swing.JRadioButton();
 
         jLNombre.setText("Nombre:");
 
@@ -69,7 +71,7 @@ public class pacienteAgregar extends javax.swing.JPanel {
 
         jLAltura.setText("Altura:");
 
-        jLcm.setText("CM");
+        jLcm.setText("M.CM");
 
         jLKGActual.setText("KG");
 
@@ -156,14 +158,13 @@ public class pacienteAgregar extends javax.swing.JPanel {
         jLtituloPaciente.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLtituloPaciente.setText("Ingreso de datos de Paciente");
 
-        inputObjetivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "\"Subir de peso\"", "\"Bajar de peso\"", "\"Mantener peso\"" }));
-        inputObjetivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputObjetivoActionPerformed(evt);
-            }
-        });
-
         jLPesoActual1.setText("Objetivo:");
+
+        inputSubirPeso.setText("Subir de peso");
+
+        inputBajarPeso.setText("Bajar de peso");
+
+        inputMantenerPeso.setText("Mantener Peso");
 
         javax.swing.GroupLayout jPanelPacienteAgregarLayout = new javax.swing.GroupLayout(jPanelPacienteAgregar);
         jPanelPacienteAgregar.setLayout(jPanelPacienteAgregarLayout);
@@ -174,7 +175,7 @@ public class pacienteAgregar extends javax.swing.JPanel {
                 .addComponent(jLtituloPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPacienteAgregarLayout.createSequentialGroup()
-                .addContainerGap(129, Short.MAX_VALUE)
+                .addContainerGap(123, Short.MAX_VALUE)
                 .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPacienteAgregarLayout.createSequentialGroup()
                         .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,8 +203,7 @@ public class pacienteAgregar extends javax.swing.JPanel {
                                         .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(inputPesoActual, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
                                             .addComponent(inputAltura)
-                                            .addComponent(inputEdad)
-                                            .addComponent(inputObjetivo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(inputEdad))
                                         .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
                                                 .addGap(15, 15, 15)
@@ -212,7 +212,13 @@ public class pacienteAgregar extends javax.swing.JPanel {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jLcm))))
                                     .addComponent(inputMujer)
-                                    .addComponent(inputHombre))))
+                                    .addComponent(inputHombre)
+                                    .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
+                                        .addComponent(inputSubirPeso)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(inputBajarPeso)
+                                        .addGap(4, 4, 4)
+                                        .addComponent(inputMantenerPeso)))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPacienteAgregarLayout.createSequentialGroup()
@@ -280,10 +286,12 @@ public class pacienteAgregar extends javax.swing.JPanel {
                                 .addGap(96, 96, 96)
                                 .addComponent(jLGenero))
                             .addGroup(jPanelPacienteAgregarLayout.createSequentialGroup()
-                                .addGap(32, 32, 32)
+                                .addGap(31, 31, 31)
                                 .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(inputObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLPesoActual1))
+                                    .addComponent(jLPesoActual1)
+                                    .addComponent(inputSubirPeso)
+                                    .addComponent(inputBajarPeso)
+                                    .addComponent(inputMantenerPeso))
                                 .addGap(18, 18, 18)
                                 .addComponent(inputHombre)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -324,13 +332,25 @@ public class pacienteAgregar extends javax.swing.JPanel {
         double altura = Double.parseDouble(inputAltura.getText());
         String sexo = "";
         
+        //Definir el sexo
         if (inputHombre.isSelected()){
         sexo = "hombre";
         } else if (inputMujer.isSelected()){
         sexo = "mujer";
         }
         
-        String objetivo = (String) inputObjetivo.getSelectedItem();
+        //Definir El objetivo
+        
+        String objetivo = "";
+        
+        if (inputSubirPeso.isSelected()){
+        objetivo = "subir";
+        } else if (inputBajarPeso.isSelected()){
+        objetivo = "bajar";
+        } else if (inputMantenerPeso.isSelected()){
+        objetivo = "mantener";
+        }
+        
         boolean vegetariano = inputVegetariano.isSelected();
         boolean celiaco = inputCeliaco.isSelected();
         boolean intoleranteLactosa = inputIntolerante.isSelected();
@@ -354,10 +374,6 @@ public class pacienteAgregar extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    private void inputObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputObjetivoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputObjetivoActionPerformed
-
     private void inputIntoleranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIntoleranteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputIntoleranteActionPerformed
@@ -369,14 +385,16 @@ public class pacienteAgregar extends javax.swing.JPanel {
     private javax.swing.JButton btnSalir;
     private javax.swing.JTextField inputAltura;
     private javax.swing.JTextField inputApellido;
+    private javax.swing.JRadioButton inputBajarPeso;
     private javax.swing.JRadioButton inputCeliaco;
     private javax.swing.JTextField inputEdad;
     private javax.swing.JRadioButton inputHombre;
     private javax.swing.JRadioButton inputIntolerante;
+    private javax.swing.JRadioButton inputMantenerPeso;
     private javax.swing.JRadioButton inputMujer;
     private javax.swing.JTextField inputNombre;
-    private javax.swing.JComboBox<String> inputObjetivo;
     private javax.swing.JTextField inputPesoActual;
+    private javax.swing.JRadioButton inputSubirPeso;
     private javax.swing.JRadioButton inputVegetariano;
     private javax.swing.JLabel jLAltura;
     private javax.swing.JLabel jLApellido;

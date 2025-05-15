@@ -37,7 +37,7 @@
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="129" max="32767" attributes="0"/>
+                  <EmptySpace pref="123" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -71,7 +71,6 @@
                                               <Component id="inputPesoActual" alignment="1" pref="154" max="32767" attributes="0"/>
                                               <Component id="inputAltura" alignment="1" max="32767" attributes="0"/>
                                               <Component id="inputEdad" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="inputObjetivo" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
@@ -86,6 +85,13 @@
                                       </Group>
                                       <Component id="inputMujer" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="inputHombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="inputSubirPeso" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="inputBajarPeso" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                                          <Component id="inputMantenerPeso" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -176,10 +182,12 @@
                                   <Component id="jLGenero" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="inputObjetivo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLPesoActual1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="inputSubirPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="inputBajarPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="inputMantenerPeso" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="inputHombre" min="-2" max="-2" attributes="0"/>
@@ -228,7 +236,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLcm">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CM"/>
+            <Property name="text" type="java.lang.String" value="M.CM"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLKGActual">
@@ -371,26 +379,24 @@
             <Property name="text" type="java.lang.String" value="Ingreso de datos de Paciente"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="inputObjetivo">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="&quot;Subir de peso&quot;"/>
-                <StringItem index="1" value="&quot;Bajar de peso&quot;"/>
-                <StringItem index="2" value="&quot;Mantener peso&quot;"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputObjetivoActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLPesoActual1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Objetivo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="inputSubirPeso">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Subir de peso"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="inputBajarPeso">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bajar de peso"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="inputMantenerPeso">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mantener Peso"/>
           </Properties>
         </Component>
       </SubComponents>
