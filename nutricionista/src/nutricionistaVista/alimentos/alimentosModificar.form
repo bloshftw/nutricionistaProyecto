@@ -27,11 +27,13 @@
                           <Component id="jLCalorias3" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="OutputJTNombre" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jCBSeleccionarAlimento1" alignment="1" pref="193" max="32767" attributes="0"/>
-                          <Component id="OutputJTTipoDeComida" alignment="1" max="32767" attributes="0"/>
-                          <Component id="OutputJTCalorias" alignment="1" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="OutputJTNombre" alignment="1" pref="193" max="32767" attributes="0"/>
+                              <Component id="OutputJTTipoDeComida" alignment="1" max="32767" attributes="0"/>
+                              <Component id="OutputJTCalorias" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jCBSeleccionarAlimento2" min="-2" pref="193" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="360" max="-2" attributes="0"/>
                   </Group>
@@ -75,11 +77,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLTituloAgregarAlimentos1" min="-2" pref="68" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLSeleccionarAlimento1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCBSeleccionarAlimento1" min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLSeleccionarAlimento1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCBSeleccionarAlimento2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLNombre3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="OutputJTNombre" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -122,14 +124,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificar5ActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jCBSeleccionarAlimento1">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBSeleccionarAlimento1ActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLSeleccionarAlimento1">
       <Properties>
@@ -202,6 +196,14 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="MODIfICAR"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jCBSeleccionarAlimento2">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBSeleccionarAlimento2ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

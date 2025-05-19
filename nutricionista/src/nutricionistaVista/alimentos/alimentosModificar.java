@@ -19,16 +19,21 @@ public class alimentosModificar extends javax.swing.JPanel {
    
     public alimentosModificar() {
         initComponents();  
+        cargarCombo();
         
         
-        jCBSeleccionarAlimento1.addActionListener(evt -> {
-            alimento sel = (alimento) jCBSeleccionarAlimento1.getSelectedItem();
-            if (sel != null) {
-                OutputJTNombre.setText(sel.getNombre());
-                OutputJTTipoDeComida.setText(sel.getCategoria());
-                OutputJTCalorias.setText(String.valueOf(sel.getCalorias()));
-                OutputCBAptoVegetariano.setSelected(sel.isAptoCeliacos());
-                OutputCBLacteo.setSelected(sel.isBajoLactosa());
+           jCBSeleccionarAlimento2.addActionListener(evt -> {
+            String nombreSel = (String) jCBSeleccionarAlimento2.getSelectedItem();
+            if (nombreSel == null) return;
+            for (alimento a : alimentos) {
+                if (a.getNombre().equals(nombreSel)) {
+                    OutputJTNombre.setText(a.getNombre());
+                    OutputJTTipoDeComida.setText(a.getCategoria());
+                    OutputJTCalorias.setText(String.valueOf(a.getCalorias()));
+                    OutputCBAptoVegetariano.setSelected(a.isAptoCeliacos());
+                    OutputCBLacteo.setSelected(a.isBajoLactosa());
+                    break;
+                }
             }
         });
     }
@@ -36,13 +41,13 @@ public class alimentosModificar extends javax.swing.JPanel {
     private List<alimento> alimentos;
 
     private void cargarCombo() {
-        alimentoData ad = new alimentoData();
+      alimentoData ad = new alimentoData();
         alimentos = ad.listarAlimentos();
-        DefaultComboBoxModel<String> m = new DefaultComboBoxModel<>();
-        for(alimento a : alimentos){
-           m.addElement(a.getNombre());
+       DefaultComboBoxModel<String> m = new DefaultComboBoxModel<>();
+        for (alimento a : alimentos) {
+            m.addElement(a.getNombre());
         }
-        jCBSeleccionarAlimento1.setModel(m);
+        jCBSeleccionarAlimento2.setModel(m); 
 
     }
   
@@ -51,7 +56,6 @@ public class alimentosModificar extends javax.swing.JPanel {
     private void initComponents() {
 
         btnModificar5 = new javax.swing.JButton();
-        jCBSeleccionarAlimento1 = new javax.swing.JComboBox<>();
         jLSeleccionarAlimento1 = new javax.swing.JLabel();
         jLNombre3 = new javax.swing.JLabel();
         OutputJTNombre = new javax.swing.JTextField();
@@ -65,17 +69,12 @@ public class alimentosModificar extends javax.swing.JPanel {
         jLLacteo3 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         jLTituloAgregarAlimentos1 = new javax.swing.JLabel();
+        jCBSeleccionarAlimento2 = new javax.swing.JComboBox<>();
 
         btnModificar5.setText("Modificar");
         btnModificar5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificar5ActionPerformed(evt);
-            }
-        });
-
-        jCBSeleccionarAlimento1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCBSeleccionarAlimento1ActionPerformed(evt);
             }
         });
 
@@ -107,6 +106,12 @@ public class alimentosModificar extends javax.swing.JPanel {
         jLTituloAgregarAlimentos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLTituloAgregarAlimentos1.setText("MODIfICAR");
 
+        jCBSeleccionarAlimento2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBSeleccionarAlimento2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,11 +126,12 @@ public class alimentosModificar extends javax.swing.JPanel {
                             .addComponent(jLTipoComida3)
                             .addComponent(jLCalorias3))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(OutputJTNombre)
-                            .addComponent(jCBSeleccionarAlimento1, 0, 193, Short.MAX_VALUE)
-                            .addComponent(OutputJTTipoDeComida)
-                            .addComponent(OutputJTCalorias))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(OutputJTNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                                .addComponent(OutputJTTipoDeComida)
+                                .addComponent(OutputJTCalorias))
+                            .addComponent(jCBSeleccionarAlimento2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(360, 360, 360))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,10 +162,10 @@ public class alimentosModificar extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLTituloAgregarAlimentos1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLSeleccionarAlimento1)
-                    .addComponent(jCBSeleccionarAlimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jCBSeleccionarAlimento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLNombre3)
                     .addComponent(OutputJTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -187,38 +193,47 @@ public class alimentosModificar extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCBSeleccionarAlimento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBSeleccionarAlimento1ActionPerformed
-     
-    }//GEN-LAST:event_jCBSeleccionarAlimento1ActionPerformed
-
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
 
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnModificar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar5ActionPerformed
         
-         alimento sel = (alimento) jCBSeleccionarAlimento1.getSelectedItem();
-         if(sel == null) return;
-            String nombre  = OutputJTNombre.getText();
-            String cat   = OutputJTTipoDeComida.getText();
-            double cal     = Double.parseDouble(OutputJTCalorias.getText());
-            boolean apto    = OutputCBAptoVegetariano.isSelected();
-            boolean lacteo  = OutputCBLacteo.isSelected();
-            
-            alimento mod = new alimento(sel.getIdAlimento(), nombre, cat, cal, apto, lacteo);
-            alimentoData ad = new alimentoData();
-            
-            boolean ok = ad.actualizarAlimento(mod);
-            if(ok){
-                JOptionPane.showMessageDialog(this, "Modificado OK");
-                cargarCombo();                   // recargo lista
-                jCBSeleccionarAlimento1.setSelectedItem(mod);
-            }else{
-                JOptionPane.showMessageDialog(this, "Error al modificar");
+        String nombreSel = (String) jCBSeleccionarAlimento2.getSelectedItem();
+        if (nombreSel == null) return;
+
+        alimento sel = null;
+        for (alimento a : alimentos) {
+            if (a.getNombre().equals(nombreSel)) {
+                sel = a;
+                break;
             }
-           
+        }
+        if (sel == null) return;
+
+        String nombre  = OutputJTNombre.getText();
+        String cat     = OutputJTTipoDeComida.getText();
+        double cal     = Double.parseDouble(OutputJTCalorias.getText());
+        boolean apto   = OutputCBAptoVegetariano.isSelected();
+        boolean lacteo = OutputCBLacteo.isSelected();
+
+        alimento mod = new alimento(sel.getIdAlimento(), nombre, cat, cal, apto, lacteo);
+        alimentoData ad = new alimentoData();
+
+        boolean ok = ad.actualizarAlimento(mod);
+        if (ok) {
+            JOptionPane.showMessageDialog(this, "Modificado OK");
+            cargarCombo();                             
+            jCBSeleccionarAlimento2.setSelectedItem(nombre);
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al modificar");
+        }
+
     }//GEN-LAST:event_btnModificar5ActionPerformed
 
+    private void jCBSeleccionarAlimento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBSeleccionarAlimento2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBSeleccionarAlimento2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox OutputCBAptoVegetariano;
@@ -228,7 +243,7 @@ public class alimentosModificar extends javax.swing.JPanel {
     private javax.swing.JTextField OutputJTTipoDeComida;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar5;
-    private javax.swing.JComboBox<String> jCBSeleccionarAlimento1;
+    private javax.swing.JComboBox<String> jCBSeleccionarAlimento2;
     private javax.swing.JLabel jLAptoParaVegetariano3;
     private javax.swing.JLabel jLCalorias3;
     private javax.swing.JLabel jLLacteo3;
