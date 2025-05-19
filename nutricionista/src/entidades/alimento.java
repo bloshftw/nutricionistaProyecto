@@ -89,6 +89,8 @@ public class alimento {
                 ", bajoLactosa=" + bajoLactosa +
                 '}';
     }
+    
+
 }
 
     
