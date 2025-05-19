@@ -194,7 +194,12 @@ public class alimentosModificar extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-
+        OutputJTNombre.setText("");
+        OutputJTTipoDeComida.setText("");
+        OutputJTCalorias.setText("");
+        OutputCBAptoVegetariano.setSelected(false);
+        OutputCBLacteo.setSelected(false);
+        OutputJTNombre.requestFocusInWindow();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnModificar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar5ActionPerformed
