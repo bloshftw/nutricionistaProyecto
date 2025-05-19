@@ -4,8 +4,12 @@
  */
 package nutricionistaVista.alimentos;
 
+import conexion.alimentoData;
+import entidades.alimento;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -15,10 +19,38 @@ import javax.swing.JPanel;
  */
 public class alimentosBuscar extends javax.swing.JPanel {
 
- 
+ private List<alimento> alimentos;
    
     public alimentosBuscar() {
         initComponents();
+        cargarCombo();
+        
+          jCBSeleccionarAlimento.addActionListener(evt -> {
+            String nombreSel = (String) jCBSeleccionarAlimento.getSelectedItem();
+            if (nombreSel == null) return;
+
+            // Buscamos en la lista el objeto alimento con ese nombre
+            for (alimento a : alimentos) {
+                if (a.getNombre().equals(nombreSel)) {
+                    OutputJTNombre5.setText(a.getNombre());
+                    OutputJTTipoDeComida5.setText(a.getCategoria());
+                    OutputJTCalorias5.setText(String.valueOf(a.getCalorias()));
+                    OutputCBAptoVegetariano5.setSelected(a.isAptoCeliacos());
+                    OutputCBLacteo5.setSelected(a.isBajoLactosa());
+                    break;
+                }
+            }
+        });
+    }
+    private void cargarCombo() {
+        alimentoData ad = new alimentoData();
+        alimentos = ad.listarAlimentos();
+        DefaultComboBoxModel<String> m = new DefaultComboBoxModel<>();
+        for (alimento a : alimentos) {
+            m.addElement(a.getNombre());
+        }
+        jCBSeleccionarAlimento.setModel(m);
+        jCBSeleccionarAlimento.setSelectedIndex(-1);
     }
 
     /**
@@ -39,12 +71,8 @@ public class alimentosBuscar extends javax.swing.JPanel {
         OutputJTTipoDeComida5 = new javax.swing.JTextField();
         OutputJTCalorias5 = new javax.swing.JTextField();
         jLCalorias2 = new javax.swing.JLabel();
-        OutputJTDetalle5 = new javax.swing.JTextField();
-        jLDetalle2 = new javax.swing.JLabel();
         jLAptoParaVegetariano2 = new javax.swing.JLabel();
         OutputCBAptoVegetariano5 = new javax.swing.JCheckBox();
-        OutputCBLibreDeTacc5 = new javax.swing.JCheckBox();
-        jLTacc2 = new javax.swing.JLabel();
         OutputCBLacteo5 = new javax.swing.JCheckBox();
         jLLacteo2 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
@@ -71,14 +99,8 @@ public class alimentosBuscar extends javax.swing.JPanel {
         jLCalorias2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLCalorias2.setText("Calorias por 100g:");
 
-        jLDetalle2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLDetalle2.setText("Detalle:");
-
         jLAptoParaVegetariano2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLAptoParaVegetariano2.setText("Apto para Vegetarianos:");
-
-        jLTacc2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLTacc2.setText("Libre de TACC:");
 
         jLLacteo2.setText("Lacteo:");
 
@@ -105,22 +127,16 @@ public class alimentosBuscar extends javax.swing.JPanel {
                             .addComponent(jLSeleccionarAlimento)
                             .addComponent(jLNombre2)
                             .addComponent(jLTipoComida2)
-                            .addComponent(jLCalorias2)
-                            .addComponent(jLDetalle2))
+                            .addComponent(jLCalorias2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(OutputJTNombre5)
                             .addComponent(jCBSeleccionarAlimento, 0, 193, Short.MAX_VALUE)
                             .addComponent(OutputJTTipoDeComida5)
-                            .addComponent(OutputJTCalorias5)
-                            .addComponent(OutputJTDetalle5)))
+                            .addComponent(OutputJTCalorias5)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(367, 367, 367)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLTacc2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(OutputCBLibreDeTacc5))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLAptoParaVegetariano2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -155,23 +171,15 @@ public class alimentosBuscar extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(OutputJTCalorias5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLCalorias2))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLDetalle2)
-                    .addComponent(OutputJTDetalle5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(OutputCBAptoVegetariano5)
                     .addComponent(jLAptoParaVegetariano2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(OutputCBLibreDeTacc5)
-                    .addComponent(jLTacc2))
-                .addGap(19, 19, 19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(OutputCBLacteo5)
                     .addComponent(jLLacteo2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
@@ -182,27 +190,29 @@ public class alimentosBuscar extends javax.swing.JPanel {
     }//GEN-LAST:event_jCBSeleccionarAlimentoActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-
+            OutputJTNombre5.setText("");
+            OutputJTTipoDeComida5.setText("");
+            OutputJTCalorias5.setText("");
+            OutputCBAptoVegetariano5.setSelected(false);
+            OutputCBLacteo5.setSelected(false);
+            jCBSeleccionarAlimento.setSelectedIndex(-1);
+            OutputJTNombre5.requestFocusInWindow();
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox OutputCBAptoVegetariano5;
     private javax.swing.JCheckBox OutputCBLacteo5;
-    private javax.swing.JCheckBox OutputCBLibreDeTacc5;
     private javax.swing.JTextField OutputJTCalorias5;
-    private javax.swing.JTextField OutputJTDetalle5;
     private javax.swing.JTextField OutputJTNombre5;
     private javax.swing.JTextField OutputJTTipoDeComida5;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JComboBox<String> jCBSeleccionarAlimento;
     private javax.swing.JLabel jLAptoParaVegetariano2;
     private javax.swing.JLabel jLCalorias2;
-    private javax.swing.JLabel jLDetalle2;
     private javax.swing.JLabel jLLacteo2;
     private javax.swing.JLabel jLNombre2;
     private javax.swing.JLabel jLSeleccionarAlimento;
-    private javax.swing.JLabel jLTacc2;
     private javax.swing.JLabel jLTipoComida2;
     private javax.swing.JLabel jLTituloAgregarAlimentos1;
     // End of variables declaration//GEN-END:variables
