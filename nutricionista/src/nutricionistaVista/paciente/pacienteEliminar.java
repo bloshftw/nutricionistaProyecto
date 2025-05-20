@@ -35,7 +35,6 @@ public class pacienteEliminar extends javax.swing.JPanel {
       
       btnEliminarPaciente.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        eliminarPaciente();
     }
 });
       
@@ -66,8 +65,11 @@ public class pacienteEliminar extends javax.swing.JPanel {
         outputSexoPaciente = new javax.swing.JTextField();
         outputAlturaPaciente = new javax.swing.JTextField();
         outputObjetivoPaciente = new javax.swing.JTextField();
-        outputCondicionPaciente = new javax.swing.JTextField();
         btnEliminarPaciente = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        rbCeliaco = new javax.swing.JCheckBox();
+        rbVegetariano = new javax.swing.JCheckBox();
+        rbIntolerante = new javax.swing.JCheckBox();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -112,14 +114,40 @@ public class pacienteEliminar extends javax.swing.JPanel {
 
         outputObjetivoPaciente.setEditable(false);
 
-        outputCondicionPaciente.setEditable(false);
-
         btnEliminarPaciente.setText("Eliminar");
         btnEliminarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarPacienteActionPerformed(evt);
             }
         });
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        rbCeliaco.setText("Celiaco");
+
+        rbVegetariano.setText("Vegetariano");
+
+        rbIntolerante.setText("Intolerante a Lactosa");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(rbCeliaco)
+            .addComponent(rbVegetariano)
+            .addComponent(rbIntolerante)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rbCeliaco, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(rbVegetariano, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rbIntolerante, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanelEliminarPacienteLayout = new javax.swing.GroupLayout(jPanelEliminarPaciente);
         jPanelEliminarPaciente.setLayout(jPanelEliminarPacienteLayout);
@@ -139,20 +167,23 @@ public class pacienteEliminar extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))))
-                .addGap(2, 2, 2)
                 .addGroup(jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboBoxPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelEliminarPacienteLayout.createSequentialGroup()
-                        .addGroup(jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(outputCondicionPaciente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                            .addComponent(outputObjetivoPaciente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(outputAlturaPaciente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(outputSexoPaciente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(outputEdadPaciente, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(outputPesoPaciente, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(79, 79, 79)
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboBoxPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(outputObjetivoPaciente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                                .addComponent(outputAlturaPaciente, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(outputSexoPaciente, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(outputEdadPaciente, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(outputPesoPaciente, javax.swing.GroupLayout.Alignment.LEADING))))
+                    .addGroup(jPanelEliminarPacienteLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121)
                         .addComponent(btnEliminarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanelEliminarPacienteLayout.setVerticalGroup(
             jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,16 +212,20 @@ public class pacienteEliminar extends javax.swing.JPanel {
                 .addGroup(jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(outputObjetivoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelEliminarPacienteLayout.createSequentialGroup()
-                        .addGroup(jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(outputCondicionPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelEliminarPacienteLayout.createSequentialGroup()
-                        .addComponent(btnEliminarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                        .addGap(19, 19, 19))))
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel13)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEliminarPacienteLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                        .addGroup(jPanelEliminarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEliminarPacienteLayout.createSequentialGroup()
+                                .addComponent(btnEliminarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEliminarPacienteLayout.createSequentialGroup()
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34))))))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -212,8 +247,8 @@ public class pacienteEliminar extends javax.swing.JPanel {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelEliminarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addComponent(jPanelEliminarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -251,13 +286,16 @@ public class pacienteEliminar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelEliminarPaciente;
     private javax.swing.JTextField outputAlturaPaciente;
-    private javax.swing.JTextField outputCondicionPaciente;
     private javax.swing.JTextField outputEdadPaciente;
     private javax.swing.JTextField outputObjetivoPaciente;
     private javax.swing.JTextField outputPesoPaciente;
     private javax.swing.JTextField outputSexoPaciente;
+    private javax.swing.JCheckBox rbCeliaco;
+    private javax.swing.JCheckBox rbIntolerante;
+    private javax.swing.JCheckBox rbVegetariano;
     // End of variables declaration//GEN-END:variables
 
     //Funcion para cargar pacientes al ComboBox
@@ -281,23 +319,23 @@ public class pacienteEliminar extends javax.swing.JPanel {
         outputAlturaPaciente.setText(String.valueOf((float) p.getAltura()));
         outputSexoPaciente.setText(p.getSexo());
         outputObjetivoPaciente.setText(p.getObjetivo());
-        String celiaquia = "";
-        String vegano = "";
-        String intoleranteLactosa = "";
         
+        
+        rbCeliaco.setSelected(false);
+        rbIntolerante.setSelected(false);
+        rbVegetariano.setSelected(false);
         //Logica para asignar Strings en base a datos booleanos
         if(p.isCeliaco() == true){
-        celiaquia = "Celiaquia";
+        rbCeliaco.setSelected(true);
         }
         if(p.isIntoleranteLactosa() == true){
-        intoleranteLactosa = "Intolerante a la lactosa";
+        rbIntolerante.setSelected(true);
         }
         if(p.isVegetariano() == true){
-        vegano = "Vegetariano";
+        rbVegetariano.setSelected(true);
         }
         
-        outputCondicionPaciente.setText(celiaquia + intoleranteLactosa + vegano);
-        // Si tienes otros datos, haz lo mismo con los demás campos.
+        
     }
 }
     
@@ -331,7 +369,9 @@ public class pacienteEliminar extends javax.swing.JPanel {
                 outputAlturaPaciente.setText("");
                 outputSexoPaciente.setText("");
                 outputObjetivoPaciente.setText("");
-                outputCondicionPaciente.setText("");
+                rbCeliaco.setSelected(false);
+                rbVegetariano.setSelected(false);
+                rbIntolerante.setSelected(false);
             } else {
                 javax.swing.JOptionPane.showMessageDialog(
                         pacienteEliminar.this,

@@ -45,6 +45,45 @@ public class pacienteData {
         }
     }
     
+    
+       //Metodo para modificar un paciente
+    
+        public boolean actualizarPaciente(paciente paciente) {
+    String sql = "UPDATE Paciente SET nombre = ?, apellido = ?, edad = ?, peso = ?, " +
+                 "altura = ?, sexo = ?, objetivo = ?, vegetariano = ?, celiaco = ?, " +
+                 "intoleranteLactosa = ? WHERE idPaciente = ?";
+    
+    try (Connection con = Conexion.getConnection();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+        
+        // Establecer los parámetros según los campos de tu clase paciente
+        ps.setString(1, paciente.getNombre());
+        ps.setString(2, paciente.getApellido());
+        ps.setInt(3, paciente.getEdad());
+        ps.setDouble(4, paciente.getPeso());
+        ps.setDouble(5, paciente.getAltura());
+        ps.setString(6, paciente.getSexo());
+        ps.setString(7, paciente.getObjetivo());
+        ps.setBoolean(8, paciente.isVegetariano());
+        ps.setBoolean(9, paciente.isCeliaco());
+        ps.setBoolean(10, paciente.isIntoleranteLactosa());
+        ps.setInt(11, paciente.getIdPaciente()); // ID para la cláusula WHERE
+        
+        // Ejecutar la actualización
+        int filasAfectadas = ps.executeUpdate();
+        
+        // Si filasAfectadas > 0, significa que se actualizó al menos un registro
+        return filasAfectadas > 0;
+        
+    } catch (SQLException e) {
+        e.printStackTrace();
+        System.err.println("Error al actualizar el paciente: " + e.getMessage());
+        return false;
+    }
+}
+    
+    
+    
        // Método para eliminar un paciente a partir de su id
     public boolean eliminarPaciente(int idPaciente) {
         String sql = "DELETE FROM Paciente WHERE idPaciente = ?";
