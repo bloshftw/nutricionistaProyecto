@@ -10,7 +10,7 @@ import nutricionistaVista.alimentos.alimentosAgregar;
 import nutricionistaVista.alimentos.alimentosBuscar;
 import nutricionistaVista.alimentos.alimentosEliminar;
 import nutricionistaVista.alimentos.alimentosModificar;
-import nutricionistaVista.dietas.dietasConsultarDieta;
+import nutricionistaVista.dietas.dietasAutomatica;
 import nutricionistaVista.dietas.dietasCrearDieta;
 import nutricionistaVista.dietas.dietasModificarDieta;
 import nutricionistaVista.paciente.pacienteAgregar;
@@ -63,7 +63,6 @@ public class menu extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -168,21 +167,13 @@ public class menu extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem10);
 
-        jMenuItem11.setText("Consultar Dieta");
+        jMenuItem11.setText("Dieta Automatica");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem11ActionPerformed(evt);
             }
         });
         jMenu5.add(jMenuItem11);
-
-        jMenuItem12.setText("Modificar Dieta");
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jMenuItem12);
 
         jMenuBar1.add(jMenu5);
 
@@ -252,14 +243,9 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        dietasConsultarDieta dConDie = new dietasConsultarDieta();
+        dietasAutomatica dConDie = new dietasAutomatica();
         showPanel(dConDie) ;
     }//GEN-LAST:event_jMenuItem11ActionPerformed
-
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-         dietasModificarDieta dModDie = new dietasModificarDieta();
-         showPanel(dModDie) ;
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     
     
@@ -321,7 +307,6 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

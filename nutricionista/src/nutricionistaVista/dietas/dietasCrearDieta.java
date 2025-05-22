@@ -10,7 +10,12 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-
+import conexion.dietaData;
+import entidades.dieta;
+import entidades.dietaDetalle;
+import java.util.ArrayList;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ferna
@@ -23,6 +28,7 @@ public class dietasCrearDieta extends javax.swing.JPanel {
     private pacienteData pacienteData;
     private List<alimento> alimentos;
     private alimentoData alimentoData;
+    private dietaData dietaData;
 
     
     public dietasCrearDieta() {
@@ -34,7 +40,7 @@ public class dietasCrearDieta extends javax.swing.JPanel {
         cargarAlimentos();
         agregarListenersAComboBox();
         agregarListenersATextFields();
-
+        dietaData = new dietaData();
         
         //Evitar modificaciones de los datos del paciente
         outputEdadPaciente.setEditable(false);
@@ -794,8 +800,18 @@ public class dietasCrearDieta extends javax.swing.JPanel {
         jLabel15.setText("Kcal");
 
         jButton1.setText("Limpiar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Guardar dieta");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Calcular");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -1031,6 +1047,14 @@ public class dietasCrearDieta extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxDesayuno1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         guardarDieta();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        limpiarFormulario();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     //Funciones
     private void cargarPacientes() {
@@ -1145,6 +1169,234 @@ public class dietasCrearDieta extends javax.swing.JPanel {
         outputTMT.setText(String.valueOf(tmtTruncado));
     }
     
+    private void guardarDieta() {
+        try {
+            if(comboBoxPacientes.getSelectedIndex() == -1) {
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un paciente");
+                return;
+            }
+            if (jTextFieldCaloriasDeLaDieta.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Debe calcular las calorías de la dieta primero");
+                return;
+            }
+            if (!hayAlimentosSeleccionados()) {
+                JOptionPane.showMessageDialog(this, "Debe seleccionar al menos un alimento para la dieta");
+                return;
+            }
+
+            // Solicitar nombre para la dieta
+            String nombreDieta = JOptionPane.showInputDialog(this, "Ingrese un nombre para la dieta:");
+            if (nombreDieta == null || nombreDieta.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Debe ingresar un nombre para la dieta");
+                return;
+            }
+            // Obtener datos del paciente seleccionado
+            int indicePaciente = comboBoxPacientes.getSelectedIndex();
+            paciente pacienteSeleccionado = listaPacientes.get(indicePaciente);
+
+            // Obtener tasa metabólica
+            double tasaMetabolica = 0;
+            if (!outputTMT.getText().trim().isEmpty()) {
+                tasaMetabolica = Double.parseDouble(outputTMT.getText());
+            }
+
+            // Crear la dieta principal
+            dieta dieta = new dieta();
+            dieta.setIdPaciente(pacienteSeleccionado.getIdPaciente());
+            dieta.setNombre(nombreDieta.trim());
+            dieta.setDescripcion("Dieta creada el " + LocalDate.now());
+            dieta.setTipo("manual");
+            dieta.setCalorias(Double.parseDouble(jTextFieldCaloriasDeLaDieta.getText()));
+            dieta.setTasaMetabolica(tasaMetabolica);
+
+            // Crear lista de detalles
+            List<dietaDetalle> detalles = new ArrayList<>();
+
+            // Procesar Desayuno
+            procesarComida(detalles, "desayuno", 
+                new JComboBox[]{jComboBoxDesayuno1, jComboBoxDesayuno2, jComboBoxDesayuno3},
+                new JTextField[]{jTextFieldDesayuno1, jTextFieldDesayuno2, jTextFieldDesayuno3});
+
+            // Procesar Almuerzo
+            procesarComida(detalles, "almuerzo",
+                new JComboBox[]{jComboBoxAlmuerzo1, jComboBoxAlmuerzo2, jComboBoxAlmuerzo3},
+                new JTextField[]{jTextFieldAlmuerzo1, jTextFieldAlmuerzo2, jTextFieldAlmuerzo3});
+
+            // Procesar Merienda
+            procesarComida(detalles, "merienda",
+                new JComboBox[]{jComboBoxMerienda1, jComboBoxMerienda2, jComboBoxMerienda3},
+                new JTextField[]{jTextFieldMerienda1, jTextFieldMerienda2, jTextFieldMerienda3});
+
+            // Procesar Cena
+            procesarComida(detalles, "cena",
+                new JComboBox[]{jComboBoxCena1, jComboBoxCena2, jComboBoxCena3},
+                new JTextField[]{jTextFieldCena1, jTextFieldCena2, jTextFieldCena3});
+
+            // Procesar Colación
+            if (jComboBoxColacion.getSelectedItem() != null && 
+                !jTextFieldColaciones.getText().trim().isEmpty()) {
+
+                String nombreAlimento = (String) jComboBoxColacion.getSelectedItem();
+                int porciones = Integer.parseInt(jTextFieldColaciones.getText().trim());
+
+                // Buscar el alimento para obtener su ID y calorías
+                alimento alimentoSeleccionado = buscarAlimentoPorNombre(nombreAlimento);
+                if (alimentoSeleccionado != null) {
+                    double calorias = alimentoSeleccionado.getCalorias() * porciones;
+
+                    dietaDetalle detalle = new dietaDetalle(0, alimentoSeleccionado.getIdAlimento(),
+                        "colacion", 1, porciones, calorias);
+                    detalles.add(detalle);
+                }
+            }
+
+            // Guardar la dieta en la base de datos
+            boolean guardado = dietaData.guardarDieta(dieta, detalles);
+
+            if (guardado) {
+                // Limpiar el formulario si se guardó exitosamente
+                limpiarFormulario();
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Error en los datos numéricos: " + e.getMessage());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar la dieta: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    // MÉTODO AUXILIAR PARA VERIFICAR SI HAY ALIMENTOS SELECCIONADOS
+    private boolean hayAlimentosSeleccionados() {
+        // Verificar desayuno
+        if (tieneAlimentoSeleccionado(jComboBoxDesayuno1, jTextFieldDesayuno1) ||
+            tieneAlimentoSeleccionado(jComboBoxDesayuno2, jTextFieldDesayuno2) ||
+            tieneAlimentoSeleccionado(jComboBoxDesayuno3, jTextFieldDesayuno3)) {
+            return true;
+        }
+
+        // Verificar almuerzo
+        if (tieneAlimentoSeleccionado(jComboBoxAlmuerzo1, jTextFieldAlmuerzo1) ||
+            tieneAlimentoSeleccionado(jComboBoxAlmuerzo2, jTextFieldAlmuerzo2) ||
+            tieneAlimentoSeleccionado(jComboBoxAlmuerzo3, jTextFieldAlmuerzo3)) {
+            return true;
+        }
+
+        // Verificar merienda
+        if (tieneAlimentoSeleccionado(jComboBoxMerienda1, jTextFieldMerienda1) ||
+            tieneAlimentoSeleccionado(jComboBoxMerienda2, jTextFieldMerienda2) ||
+            tieneAlimentoSeleccionado(jComboBoxMerienda3, jTextFieldMerienda3)) {
+            return true;
+        }
+
+        // Verificar cena
+        if (tieneAlimentoSeleccionado(jComboBoxCena1, jTextFieldCena1) ||
+            tieneAlimentoSeleccionado(jComboBoxCena2, jTextFieldCena2) ||
+            tieneAlimentoSeleccionado(jComboBoxCena3, jTextFieldCena3)) {
+            return true;
+        }
+
+        // Verificar colación
+        if (tieneAlimentoSeleccionado(jComboBoxColacion, jTextFieldColaciones)) {
+            return true;
+        }
+
+        return false;
+    }
+    // MÉTODO AUXILIAR PARA VERIFICAR SI UN COMBOBOX TIENE ALIMENTO SELECCIONADO
+    
+    private boolean tieneAlimentoSeleccionado(JComboBox<String> combo, JTextField textField) {
+        return combo.getSelectedItem() != null && 
+               !textField.getText().trim().isEmpty() &&
+               !textField.getText().trim().equals("0");
+    }
+    // MÉTODO AUXILIAR PARA PROCESAR CADA COMIDA
+    private void procesarComida(List<dietaDetalle> detalles, String tipoComida, 
+                               JComboBox<String>[] combos, JTextField[] textFields) {
+
+        for (int i = 0; i < combos.length; i++) {
+            if (combos[i].getSelectedItem() != null && 
+                !textFields[i].getText().trim().isEmpty()) {
+
+                try {
+                    String nombreAlimento = (String) combos[i].getSelectedItem();
+                    int porciones = Integer.parseInt(textFields[i].getText().trim());
+
+                    if (porciones > 0) {  // Solo procesar si las porciones son mayor a 0
+                        // Buscar el alimento para obtener su ID y calorías
+                        alimento alimentoSeleccionado = buscarAlimentoPorNombre(nombreAlimento);
+                        if (alimentoSeleccionado != null) {
+                            double calorias = alimentoSeleccionado.getCalorias() * porciones;
+
+                            dietaDetalle detalle = new dietaDetalle(0, alimentoSeleccionado.getIdAlimento(),
+                                tipoComida, i + 1, porciones, calorias);
+                            detalles.add(detalle);
+                        }
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Error al procesar porciones en " + tipoComida + " posición " + (i+1));
+                }
+            }
+        }
+    }
+    // MÉTODO AUXILIAR PARA BUSCAR UN ALIMENTO POR NOMBRE
+    private alimento buscarAlimentoPorNombre(String nombre) {
+        for (alimento a : alimentos) {
+            if (a.getNombre().equals(nombre)) {
+                return a;
+            }
+        }
+        return null;
+    }
+    
+    private void limpiarFormulario() {
+        // Limpiar ComboBoxes de alimentos (mantener opciones pero sin selección)
+        jComboBoxDesayuno1.setSelectedIndex(-1);
+        jComboBoxDesayuno2.setSelectedIndex(-1);
+        jComboBoxDesayuno3.setSelectedIndex(-1);
+        jComboBoxAlmuerzo1.setSelectedIndex(-1);
+        jComboBoxAlmuerzo2.setSelectedIndex(-1);
+        jComboBoxAlmuerzo3.setSelectedIndex(-1);
+        jComboBoxMerienda1.setSelectedIndex(-1);
+        jComboBoxMerienda2.setSelectedIndex(-1);
+        jComboBoxMerienda3.setSelectedIndex(-1);
+        jComboBoxCena1.setSelectedIndex(-1);
+        jComboBoxCena2.setSelectedIndex(-1);
+        jComboBoxCena3.setSelectedIndex(-1);
+        jComboBoxColacion.setSelectedIndex(-1);
+
+        // Limpiar TextFields de porciones
+        jTextFieldDesayuno1.setText("");
+        jTextFieldDesayuno2.setText("");
+        jTextFieldDesayuno3.setText("");
+        jTextFieldAlmuerzo1.setText("");
+        jTextFieldAlmuerzo2.setText("");
+        jTextFieldAlmuerzo3.setText("");
+        jTextFieldMerienda1.setText("");
+        jTextFieldMerienda2.setText("");
+        jTextFieldMerienda3.setText("");
+        jTextFieldCena1.setText("");
+        jTextFieldCena2.setText("");
+        jTextFieldCena3.setText("");
+        jTextFieldColaciones.setText("");
+
+        // Limpiar calorías totales
+        jTextFieldCaloriasDeLaDieta.setText("");
+
+        // Resetear nivel de actividad física
+        rbSedentario.setSelected(false);
+        rbActividadLeve.setSelected(false);
+        rbModerada.setSelected(false);
+        rbMuyActivo.setSelected(false);
+
+        // Limpiar TMT
+        outputTMT.setText("");
+
+        // Resetear selección de paciente (opcional)
+        // comboBoxPacientes.setSelectedIndex(-1);
+
+        JOptionPane.showMessageDialog(this, "Formulario limpiado correctamente");
+    }
     
     //Funciones
     
