@@ -320,9 +320,27 @@ public class pacienteAgregar extends javax.swing.JPanel {
     }//GEN-LAST:event_inputHombreActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-     
+limpiar();
+JOptionPane.showMessageDialog(this, "Formulario limpiado correctamente.");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void limpiar(){
+    inputNombre.setText("");
+    inputApellido.setText("");
+    inputEdad.setText("");
+    inputAltura.setText("");
+    inputPesoActual.setText("");
+     //botones
+     inputSubirPeso.setSelected(false);
+     inputBajarPeso.setSelected(false);
+     inputMantenerPeso.setSelected(false);
+     inputHombre.setSelected(false);
+     inputMujer.setSelected(false);
+     inputCeliaco.setSelected(false);
+     inputIntolerante.setSelected(false);
+     inputVegetariano.setSelected(false);
+    }
+    
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
 
         String nombre = inputNombre.getText();

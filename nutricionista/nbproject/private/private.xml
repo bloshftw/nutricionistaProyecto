@@ -6,20 +6,18 @@
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/conexion/Conexion.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/dietas/dietasCrearDieta.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/dietas/dietasModificarDieta.java</file>
-            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/conexion/renglonAlimentoData.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/entidades/Main.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteEliminar.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteAgregar.java</file>
-            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/caca/dietaVista1.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/alimentos/alimentosEliminar.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/menu.java</file>
-            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/caca/menuPrincipal.java</file>
-            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/caca/pacientesVista.java</file>
-            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteModificar.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/alimentos/alimentosAgregar.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/alimentos/alimentosBuscar.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/conexion/testConexion.java</file>
-            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/caca/modificarPacienteVista.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/alimentos/alimentosModificar.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/entidades/paciente.java</file>
             <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/paciente/pacienteBuscar.java</file>
+            <file>file:/C:/Users/Lucia/Documents/Facultad/Laboratorio%20de%20Programacion/Nutricionista/nutricionistaProyecto/nutricionista/src/nutricionistaVista/dietas/dietasAutomatica.java</file>
         </group>
     </open-files>
 </project-private>

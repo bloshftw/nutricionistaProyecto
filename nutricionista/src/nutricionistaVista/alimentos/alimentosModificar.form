@@ -23,25 +23,19 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLSeleccionarAlimento1" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jLNombre3" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLTipoComida3" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLCalorias3" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="OutputJTNombre" alignment="1" pref="193" max="32767" attributes="0"/>
-                              <Component id="OutputJTTipoDeComida" alignment="1" max="32767" attributes="0"/>
-                              <Component id="OutputJTCalorias" alignment="1" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="OutputJTNombre" min="-2" pref="193" max="-2" attributes="0"/>
                           <Component id="jCBSeleccionarAlimento2" min="-2" pref="193" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="360" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="btnLimpiar" min="-2" pref="113" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="258" max="-2" attributes="0"/>
-                      <Component id="btnModificar5" min="-2" pref="170" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnLimpiar" min="-2" pref="104" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="btnModificar5" min="-2" pref="115" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="285" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -51,19 +45,22 @@
                       <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
                       <Component id="jLTituloAgregarAlimentos1" min="-2" pref="402" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="358" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="352" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLAptoParaVegetariano3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="OutputCBAptoVegetariano" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLLacteo3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLAptoParaVegetariano3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="jLTipoComida3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLCalorias3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLLacteo3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="OutputCBLacteo" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="OutputCBAptoVegetariano" min="-2" max="-2" attributes="0"/>
+                          <Component id="OutputCBLacteo" min="-2" max="-2" attributes="0"/>
+                          <Component id="OutputJTCalorias" min="-2" pref="193" max="-2" attributes="0"/>
+                          <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -76,42 +73,48 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLTituloAgregarAlimentos1" min="-2" pref="68" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLSeleccionarAlimento1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCBSeleccionarAlimento2" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLSeleccionarAlimento1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCBSeleccionarAlimento2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLNombre3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="OutputJTNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLTipoComida3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="OutputJTTipoDeComida" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="jLTipoComida3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="49" max="32767" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="OutputJTCalorias" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLCalorias3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="OutputJTCalorias" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLAptoParaVegetariano3" min="-2" max="-2" attributes="0"/>
+                  <Component id="OutputCBAptoVegetariano" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="OutputCBAptoVegetariano" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLAptoParaVegetariano3" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="OutputCBLacteo" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLLacteo3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="OutputCBLacteo" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLLacteo3" alignment="1" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="116" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnLimpiar" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="btnModificar5" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
+                  <Component id="btnModificar5" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="btnLimpiar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -142,8 +145,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="OutputJTNombre">
-    </Component>
-    <Component class="javax.swing.JTextField" name="OutputJTTipoDeComida">
     </Component>
     <Component class="javax.swing.JLabel" name="jLTipoComida3">
       <Properties>
@@ -205,5 +206,81 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="rbAlmuerzo" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbMerienda" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbDesayuno" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="rbCena" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbColacion" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="12" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="rbDesayuno" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="rbAlmuerzo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="10" max="32767" attributes="0"/>
+                  <Component id="rbMerienda" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="rbCena" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="rbColacion" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JCheckBox" name="rbDesayuno">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Desayuno"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="rbAlmuerzo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Almuerzo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="rbMerienda">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Merienda"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="rbCena">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cena"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="rbColacion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Colacion"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
