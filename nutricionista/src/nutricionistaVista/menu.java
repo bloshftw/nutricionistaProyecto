@@ -247,6 +247,7 @@ public class menu extends javax.swing.JFrame {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
            dietasCrearDieta dCrearDie = new dietasCrearDieta ();
+           
            showPanel(dCrearDie) ;
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 

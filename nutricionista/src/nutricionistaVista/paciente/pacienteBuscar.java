@@ -11,7 +11,7 @@ import javax.swing.JComboBox;
 
 /**
  *
- * @author ferna
+ * @author fernando y luciano 
  */
 public class pacienteBuscar extends javax.swing.JPanel {
 
