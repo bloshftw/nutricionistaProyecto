@@ -73,11 +73,14 @@ public class pacienteModificar extends javax.swing.JPanel {
         rbBajarPeso = new javax.swing.JRadioButton();
         rbMantenerPeso = new javax.swing.JRadioButton();
 
+        setBackground(new java.awt.Color(204, 255, 255));
         setPreferredSize(new java.awt.Dimension(800, 800));
 
+        jPanelEliminarPaciente.setBackground(new java.awt.Color(0, 102, 102));
         jPanelEliminarPaciente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Seleccionar Paciente:");
 
         comboBoxPacientes.addActionListener(new java.awt.event.ActionListener() {
@@ -86,19 +89,24 @@ public class pacienteModificar extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Peso Paciente:");
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Edad:");
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Sexo:");
 
-        jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Objetivo:");
 
-        jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Condicion especial:");
 
         outputPesoPaciente.setEditable(false);
@@ -124,7 +132,8 @@ public class pacienteModificar extends javax.swing.JPanel {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Altura");
 
         jButton1.setText("MODIFICAR");
@@ -134,8 +143,11 @@ public class pacienteModificar extends javax.swing.JPanel {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        rbCeliaquia.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbCeliaquia.setForeground(new java.awt.Color(0, 0, 0));
         rbCeliaquia.setText("Celiaquia");
         rbCeliaquia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,8 +155,12 @@ public class pacienteModificar extends javax.swing.JPanel {
             }
         });
 
+        rbVegetariano.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbVegetariano.setForeground(new java.awt.Color(0, 0, 0));
         rbVegetariano.setText("Vegetariano");
 
+        rbIntoleranteLactosa.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbIntoleranteLactosa.setForeground(new java.awt.Color(0, 0, 0));
         rbIntoleranteLactosa.setText("Intolerancia a la lactosa");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -156,7 +172,7 @@ public class pacienteModificar extends javax.swing.JPanel {
                     .addComponent(rbCeliaquia)
                     .addComponent(rbVegetariano)
                     .addComponent(rbIntoleranteLactosa))
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,10 +185,15 @@ public class pacienteModificar extends javax.swing.JPanel {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        rbMujer.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbMujer.setForeground(new java.awt.Color(0, 0, 0));
         rbMujer.setText("Mujer");
 
+        rbHombre.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbHombre.setForeground(new java.awt.Color(0, 0, 0));
         rbHombre.setText("Hombre");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -193,12 +214,19 @@ public class pacienteModificar extends javax.swing.JPanel {
                 .addComponent(rbMujer))
         );
 
+        jPanel3.setBackground(new java.awt.Color(153, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        rbSubirPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbSubirPeso.setForeground(new java.awt.Color(0, 0, 0));
         rbSubirPeso.setText("Subir de peso");
 
+        rbBajarPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbBajarPeso.setForeground(new java.awt.Color(0, 0, 0));
         rbBajarPeso.setText("Bajar de peso");
 
+        rbMantenerPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbMantenerPeso.setForeground(new java.awt.Color(0, 0, 0));
         rbMantenerPeso.setText("Mantener Peso");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -337,7 +365,7 @@ public class pacienteModificar extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jPanelEliminarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

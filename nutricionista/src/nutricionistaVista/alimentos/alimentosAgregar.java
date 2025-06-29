@@ -57,11 +57,16 @@ public class alimentosAgregar extends javax.swing.JPanel {
 
         setForeground(new java.awt.Color(0, 0, 255));
 
-        jLTituloAgregarAlimentos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLTituloAgregarAlimentos.setBackground(new java.awt.Color(0, 102, 102));
+        jLTituloAgregarAlimentos.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
+        jLTituloAgregarAlimentos.setForeground(new java.awt.Color(0, 0, 0));
         jLTituloAgregarAlimentos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLTituloAgregarAlimentos.setText("AGREGAR ");
 
-        jLnombe1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLnombe1.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLnombe1.setForeground(new java.awt.Color(0, 0, 0));
         jLnombe1.setText("Nombre:");
 
         InputJTNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -70,10 +75,12 @@ public class alimentosAgregar extends javax.swing.JPanel {
             }
         });
 
-        jLTipoDeComida.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLTipoDeComida.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLTipoDeComida.setForeground(new java.awt.Color(0, 0, 0));
         jLTipoDeComida.setText("Tipo de Comida:");
 
-        jLCalorias.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLCalorias.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLCalorias.setForeground(new java.awt.Color(0, 0, 0));
         jLCalorias.setText("Calorias por 100g:");
 
         btnAgregar.setText("Agregar");
@@ -83,7 +90,8 @@ public class alimentosAgregar extends javax.swing.JPanel {
             }
         });
 
-        jLAptoParaVeg.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLAptoParaVeg.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLAptoParaVeg.setForeground(new java.awt.Color(0, 0, 0));
         jLAptoParaVeg.setText("Apto para Vegetarianos:");
 
         InputCBAptoVegetarianos.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +100,8 @@ public class alimentosAgregar extends javax.swing.JPanel {
             }
         });
 
-        jLLacteo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLLacteo.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLLacteo.setForeground(new java.awt.Color(0, 0, 0));
         jLLacteo.setText("Lacteo:");
 
         btnLimpiar.setText("Limpiar");
@@ -102,16 +111,27 @@ public class alimentosAgregar extends javax.swing.JPanel {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        rbDesayuno.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbDesayuno.setForeground(new java.awt.Color(0, 0, 0));
         rbDesayuno.setText("Desayuno");
 
+        rbAlmuerzo.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbAlmuerzo.setForeground(new java.awt.Color(0, 0, 0));
         rbAlmuerzo.setText("Almuerzo");
 
+        rbMerienda.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbMerienda.setForeground(new java.awt.Color(0, 0, 0));
         rbMerienda.setText("Merienda");
 
+        rbCena.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbCena.setForeground(new java.awt.Color(0, 0, 0));
         rbCena.setText("Cena");
 
+        rbColacion.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbColacion.setForeground(new java.awt.Color(0, 0, 0));
         rbColacion.setText("Colacion");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -130,12 +150,12 @@ public class alimentosAgregar extends javax.swing.JPanel {
                         .addComponent(rbCena)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rbColacion)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -156,7 +176,7 @@ public class alimentosAgregar extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 342, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLTituloAgregarAlimentos, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(324, 324, 324))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -212,7 +232,7 @@ public class alimentosAgregar extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLAptoParaVeg)
                     .addComponent(InputCBAptoVegetarianos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(InputCBLacteo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLLacteo, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -233,9 +253,7 @@ public class alimentosAgregar extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         getAccessibleContext().setAccessibleName("jpanelAB");

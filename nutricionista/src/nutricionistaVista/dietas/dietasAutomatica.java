@@ -90,6 +90,10 @@ public class dietasAutomatica extends javax.swing.JPanel {
         jTextFieldCaloriasDeLaDieta2 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
 
+        jPanelDietasConsultarDieta.setBackground(new java.awt.Color(204, 255, 255));
+        jPanelDietasConsultarDieta.setForeground(new java.awt.Color(153, 255, 255));
+
+        jPanel7.setBackground(new java.awt.Color(0, 102, 102));
         jPanel7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jComboBox2Desayuno1.addActionListener(new java.awt.event.ActionListener() {
@@ -98,10 +102,16 @@ public class dietasAutomatica extends javax.swing.JPanel {
             }
         });
 
+        jLabel17.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Porciones");
 
+        jLabel18.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("Porciones");
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Porciones");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -151,16 +161,27 @@ public class dietasAutomatica extends javax.swing.JPanel {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Desayuno");
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Almuerzo");
 
+        jPanel8.setBackground(new java.awt.Color(0, 102, 102));
         jPanel8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
         jLabel20.setText("Porciones");
 
+        jLabel21.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setText("Porciones");
 
+        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("Porciones");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -211,14 +232,23 @@ public class dietasAutomatica extends javax.swing.JPanel {
                 .addGap(16, 16, 16))
         );
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Merienda");
 
+        jPanel10.setBackground(new java.awt.Color(0, 102, 102));
         jPanel10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel23.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setText("Porciones");
 
+        jLabel24.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("Porciones");
 
+        jLabel25.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setText("Porciones");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -268,10 +298,15 @@ public class dietasAutomatica extends javax.swing.JPanel {
                 .addGap(16, 16, 16))
         );
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Cena");
 
+        jPanel9.setBackground(new java.awt.Color(0, 102, 102));
         jPanel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel26.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("Porciones");
 
         jComboBox2Cena2.addActionListener(new java.awt.event.ActionListener() {
@@ -280,8 +315,12 @@ public class dietasAutomatica extends javax.swing.JPanel {
             }
         });
 
+        jLabel27.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
         jLabel27.setText("Porciones");
 
+        jLabel28.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("Porciones");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -331,8 +370,11 @@ public class dietasAutomatica extends javax.swing.JPanel {
                 .addGap(21, 21, 21))
         );
 
+        jPanel11.setBackground(new java.awt.Color(0, 102, 102));
         jPanel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jLabel29.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Porciones");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -362,6 +404,8 @@ public class dietasAutomatica extends javax.swing.JPanel {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
+        Colacion.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        Colacion.setForeground(new java.awt.Color(0, 0, 0));
         Colacion.setText("Colacion");
 
         jBLimpiar2.setText("Limpiar");
@@ -378,8 +422,12 @@ public class dietasAutomatica extends javax.swing.JPanel {
             }
         });
 
+        jLabel30.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Calorias de la dieta");
 
+        jLabel31.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Kcal");
 
         javax.swing.GroupLayout jPanelDietasConsultarDietaLayout = new javax.swing.GroupLayout(jPanelDietasConsultarDieta);

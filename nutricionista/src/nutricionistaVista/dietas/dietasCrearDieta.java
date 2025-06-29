@@ -33,7 +33,7 @@ public class dietasCrearDieta extends javax.swing.JPanel {
     
     public dietasCrearDieta() {
         initComponents();
-        
+     
         pacienteData = new pacienteData();
         cargarPacientes();
         alimentoData = new alimentoData();
@@ -56,6 +56,7 @@ public class dietasCrearDieta extends javax.swing.JPanel {
         rbBajarPeso.setEnabled(false);
         rbMantenerPeso.setEnabled(false);
     }
+    
     private void cargarAlimentos() {
         alimentos = alimentoData.listarAlimentos();
 
@@ -117,8 +118,7 @@ public class dietasCrearDieta extends javax.swing.JPanel {
         }
         return 0;
     }
-
-    
+ 
     private void calcularCaloriasTotales() {
         double totalCalorias = 0;
         totalCalorias += calcularCaloriasPorComida(jComboBoxDesayuno1, jTextFieldDesayuno1);
@@ -289,10 +289,14 @@ public class dietasCrearDieta extends javax.swing.JPanel {
         jTextFieldCaloriasDeLaDieta = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
 
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Seleccionar paciente");
 
         comboBoxPacientes.addActionListener(new java.awt.event.ActionListener() {
@@ -307,13 +311,16 @@ public class dietasCrearDieta extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Edad");
 
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Altura");
 
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Peso actual");
 
         outputEdadPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -328,15 +335,23 @@ public class dietasCrearDieta extends javax.swing.JPanel {
             }
         });
 
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Objetivo");
 
+        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        rbSubirPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbSubirPeso.setForeground(new java.awt.Color(0, 0, 0));
         rbSubirPeso.setText("Subir de peso");
 
+        rbBajarPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbBajarPeso.setForeground(new java.awt.Color(0, 0, 0));
         rbBajarPeso.setText("Bajar de peso");
 
+        rbMantenerPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbMantenerPeso.setForeground(new java.awt.Color(0, 0, 0));
         rbMantenerPeso.setText("Mantener peso");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -349,7 +364,7 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                     .addComponent(rbSubirPeso)
                     .addComponent(rbBajarPeso)
                     .addComponent(rbMantenerPeso))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,13 +378,19 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addGap(12, 12, 12))
         );
 
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Genero");
 
+        jPanel5.setBackground(new java.awt.Color(0, 102, 102));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        rbMujer.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbMujer.setForeground(new java.awt.Color(0, 0, 0));
         rbMujer.setText("Mujer");
 
+        rbHombre.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbHombre.setForeground(new java.awt.Color(0, 0, 0));
         rbHombre.setText("Hombre");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -391,15 +412,23 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Condicion");
 
+        jPanel6.setBackground(new java.awt.Color(0, 102, 102));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        rbVegetariano.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbVegetariano.setForeground(new java.awt.Color(0, 0, 0));
         rbVegetariano.setText("Vegetariano");
 
+        rbIntoleranteLactosa.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbIntoleranteLactosa.setForeground(new java.awt.Color(0, 0, 0));
         rbIntoleranteLactosa.setText("Intolerante Lactosa");
 
+        rbCeliaquia.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbCeliaquia.setForeground(new java.awt.Color(0, 0, 0));
         rbCeliaquia.setText("Celiaco");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -424,8 +453,12 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("años");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("kilogramos");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -519,18 +552,30 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
+        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Desayuno");
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Cena");
 
+        Colacion.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        Colacion.setForeground(new java.awt.Color(0, 0, 0));
         Colacion.setText("Colacion");
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Almuerzo");
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Merienda");
 
+        jPanel7.setBackground(new java.awt.Color(0, 102, 102));
         jPanel7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jComboBoxDesayuno1.addActionListener(new java.awt.event.ActionListener() {
@@ -539,10 +584,22 @@ public class dietasCrearDieta extends javax.swing.JPanel {
             }
         });
 
+        jLabel17.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Porciones");
 
+        jTextFieldDesayuno1.setBackground(new java.awt.Color(204, 255, 255));
+
+        jTextFieldDesayuno2.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("Porciones");
 
+        jTextFieldDesayuno3.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Porciones");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -592,12 +649,25 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        jPanel8.setBackground(new java.awt.Color(0, 102, 102));
         jPanel8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jTextFieldAlmuerzo1.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
         jLabel20.setText("Porciones");
 
+        jTextFieldAlmuerzo2.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
         jLabel21.setText("Porciones");
 
+        jTextFieldAlmuerzo3.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
         jLabel22.setText("Porciones");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -648,8 +718,13 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addGap(16, 16, 16))
         );
 
+        jPanel9.setBackground(new java.awt.Color(0, 102, 102));
         jPanel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jTextFieldCena1.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("Porciones");
 
         jComboBoxCena2.addActionListener(new java.awt.event.ActionListener() {
@@ -658,8 +733,16 @@ public class dietasCrearDieta extends javax.swing.JPanel {
             }
         });
 
+        jTextFieldCena2.setBackground(new java.awt.Color(204, 255, 255));
+
+        jTextFieldCena3.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
         jLabel27.setText("Porciones");
 
+        jLabel28.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("Porciones");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -709,12 +792,25 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addGap(21, 21, 21))
         );
 
+        jPanel10.setBackground(new java.awt.Color(0, 102, 102));
         jPanel10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jTextFieldMerienda2.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
         jLabel23.setText("Porciones");
 
+        jTextFieldMerienda1.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
         jLabel24.setText("Porciones");
 
+        jTextFieldMerienda3.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setText("Porciones");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -764,8 +860,13 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addGap(16, 16, 16))
         );
 
+        jPanel11.setBackground(new java.awt.Color(0, 102, 102));
         jPanel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jTextFieldColaciones.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Porciones");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -795,8 +896,12 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
+        jLabel12.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Tasa Metabolica Total");
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Kcal");
 
         jButton1.setText("Limpiar");
@@ -820,18 +925,32 @@ public class dietasCrearDieta extends javax.swing.JPanel {
             }
         });
 
+        jLabel16.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Nivel de actividad fisica");
 
+        rbActividadLeve.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbActividadLeve.setForeground(new java.awt.Color(0, 0, 0));
         rbActividadLeve.setText("Actividad leve");
 
+        rbSedentario.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbSedentario.setForeground(new java.awt.Color(0, 0, 0));
         rbSedentario.setText("Sedentario");
 
+        rbModerada.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbModerada.setForeground(new java.awt.Color(0, 0, 0));
         rbModerada.setText("Moderada");
 
+        rbMuyActivo.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbMuyActivo.setForeground(new java.awt.Color(0, 0, 0));
         rbMuyActivo.setText("Muy activo");
 
+        jLabel30.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Calorias de la dieta");
 
+        jLabel31.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Kcal");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -1006,13 +1125,13 @@ public class dietasCrearDieta extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelDietaCrearDieta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 46, Short.MAX_VALUE))
+                .addGap(0, 36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelDietaCrearDieta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addGap(0, 29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1310,7 +1429,7 @@ public class dietasCrearDieta extends javax.swing.JPanel {
                !textField.getText().trim().isEmpty() &&
                !textField.getText().trim().equals("0");
     }
-    // MÉTODO AUXILIAR PARA PROCESAR CADA COMIDA
+  
     private void procesarComida(List<dietaDetalle> detalles, String tipoComida, 
                                JComboBox<String>[] combos, JTextField[] textFields) {
 
@@ -1339,7 +1458,8 @@ public class dietasCrearDieta extends javax.swing.JPanel {
             }
         }
     }
-    // MÉTODO AUXILIAR PARA BUSCAR UN ALIMENTO POR NOMBRE
+ 
+    
     private alimento buscarAlimentoPorNombre(String nombre) {
         for (alimento a : alimentos) {
             if (a.getNombre().equals(nombre)) {
@@ -1348,7 +1468,7 @@ public class dietasCrearDieta extends javax.swing.JPanel {
         }
         return null;
     }
-    
+
     private void limpiarFormulario() {
         // Limpiar ComboBoxes de alimentos (mantener opciones pero sin selección)
         jComboBoxDesayuno1.setSelectedIndex(-1);

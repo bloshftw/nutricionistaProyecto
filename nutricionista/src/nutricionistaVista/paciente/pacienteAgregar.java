@@ -57,6 +57,10 @@ public class pacienteAgregar extends javax.swing.JPanel {
         inputBajarPeso = new javax.swing.JRadioButton();
         inputMantenerPeso = new javax.swing.JRadioButton();
 
+        jPanelPacienteAgregar.setBackground(new java.awt.Color(204, 255, 255));
+
+        jLNombre.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLNombre.setForeground(new java.awt.Color(0, 0, 0));
         jLNombre.setText("Nombre:");
 
         inputNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -65,18 +69,32 @@ public class pacienteAgregar extends javax.swing.JPanel {
             }
         });
 
+        jLApellido.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLApellido.setForeground(new java.awt.Color(0, 0, 0));
         jLApellido.setText("Apellido:");
 
+        jLEdad.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLEdad.setForeground(new java.awt.Color(0, 0, 0));
         jLEdad.setText("Edad:");
 
+        jLAltura.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLAltura.setForeground(new java.awt.Color(0, 0, 0));
         jLAltura.setText("Altura:");
 
+        jLcm.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLcm.setForeground(new java.awt.Color(0, 0, 0));
         jLcm.setText("M.CM");
 
+        jLKGActual.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLKGActual.setForeground(new java.awt.Color(0, 0, 0));
         jLKGActual.setText("KG");
 
+        jLPesoActual.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLPesoActual.setForeground(new java.awt.Color(0, 0, 0));
         jLPesoActual.setText("Peso Actual:");
 
+        inputHombre.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        inputHombre.setForeground(new java.awt.Color(0, 0, 0));
         inputHombre.setText("Hombre");
         inputHombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,20 +102,33 @@ public class pacienteAgregar extends javax.swing.JPanel {
             }
         });
 
+        jLGenero.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLGenero.setForeground(new java.awt.Color(0, 0, 0));
         jLGenero.setText("Genero:");
 
+        inputMujer.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        inputMujer.setForeground(new java.awt.Color(0, 0, 0));
         inputMujer.setText("Mujer");
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/nutricionista.png"))); // NOI18N
 
+        jLCondicionAlimenticia.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLCondicionAlimenticia.setForeground(new java.awt.Color(0, 0, 0));
         jLCondicionAlimenticia.setText("Condicion alimenticia:");
 
+        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        inputCeliaco.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        inputCeliaco.setForeground(new java.awt.Color(0, 0, 0));
         inputCeliaco.setText("Celiaco");
 
+        inputVegetariano.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        inputVegetariano.setForeground(new java.awt.Color(0, 0, 0));
         inputVegetariano.setText("Vegetariano");
 
+        inputIntolerante.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        inputIntolerante.setForeground(new java.awt.Color(0, 0, 0));
         inputIntolerante.setText("Intolerante a la lactosa");
         inputIntolerante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,15 +186,23 @@ public class pacienteAgregar extends javax.swing.JPanel {
         });
 
         jLtituloPaciente.setAlignment(java.awt.Label.CENTER);
-        jLtituloPaciente.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLtituloPaciente.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
         jLtituloPaciente.setText("Ingreso de datos de Paciente");
 
+        jLPesoActual1.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLPesoActual1.setForeground(new java.awt.Color(0, 0, 0));
         jLPesoActual1.setText("Objetivo:");
 
+        inputSubirPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        inputSubirPeso.setForeground(new java.awt.Color(0, 0, 0));
         inputSubirPeso.setText("Subir de peso");
 
+        inputBajarPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        inputBajarPeso.setForeground(new java.awt.Color(0, 0, 0));
         inputBajarPeso.setText("Bajar de peso");
 
+        inputMantenerPeso.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        inputMantenerPeso.setForeground(new java.awt.Color(0, 0, 0));
         inputMantenerPeso.setText("Mantener Peso");
 
         javax.swing.GroupLayout jPanelPacienteAgregarLayout = new javax.swing.GroupLayout(jPanelPacienteAgregar);
@@ -175,7 +214,7 @@ public class pacienteAgregar extends javax.swing.JPanel {
                 .addComponent(jLtituloPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPacienteAgregarLayout.createSequentialGroup()
-                .addContainerGap(123, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPacienteAgregarLayout.createSequentialGroup()
                         .addGroup(jPanelPacienteAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

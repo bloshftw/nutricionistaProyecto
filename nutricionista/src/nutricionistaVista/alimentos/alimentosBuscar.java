@@ -102,7 +102,10 @@ public class alimentosBuscar extends javax.swing.JPanel {
         rbCena = new javax.swing.JCheckBox();
         rbColacion = new javax.swing.JCheckBox();
 
-        jLTituloAgregarAlimentos1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        setBackground(new java.awt.Color(204, 255, 255));
+
+        jLTituloAgregarAlimentos1.setFont(new java.awt.Font("Segoe UI Black", 2, 24)); // NOI18N
+        jLTituloAgregarAlimentos1.setForeground(new java.awt.Color(0, 0, 0));
         jLTituloAgregarAlimentos1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLTituloAgregarAlimentos1.setText("BUSCAR");
 
@@ -112,21 +115,28 @@ public class alimentosBuscar extends javax.swing.JPanel {
             }
         });
 
-        jLSeleccionarAlimento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLSeleccionarAlimento.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLSeleccionarAlimento.setForeground(new java.awt.Color(0, 0, 0));
         jLSeleccionarAlimento.setText("Seleccionar Alimento: ");
 
-        jLNombre2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLNombre2.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLNombre2.setForeground(new java.awt.Color(0, 0, 0));
         jLNombre2.setText("Nombre:");
 
-        jLTipoComida2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLTipoComida2.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLTipoComida2.setForeground(new java.awt.Color(0, 0, 0));
         jLTipoComida2.setText("Tipo de Comida:");
 
-        jLCalorias2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLCalorias2.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLCalorias2.setForeground(new java.awt.Color(0, 0, 0));
         jLCalorias2.setText("Calorias por 100g:");
 
-        jLAptoParaVegetariano2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLAptoParaVegetariano2.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLAptoParaVegetariano2.setForeground(new java.awt.Color(0, 0, 0));
         jLAptoParaVegetariano2.setText("Apto para Vegetarianos:");
 
+        jLLacteo2.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        jLLacteo2.setForeground(new java.awt.Color(0, 0, 0));
         jLLacteo2.setText("Lacteo:");
 
         btnLimpiar.setText("Limpiar");
@@ -136,16 +146,27 @@ public class alimentosBuscar extends javax.swing.JPanel {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        rbDesayuno.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbDesayuno.setForeground(new java.awt.Color(0, 0, 0));
         rbDesayuno.setText("Desayuno");
 
+        rbAlmuerzo.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbAlmuerzo.setForeground(new java.awt.Color(0, 0, 0));
         rbAlmuerzo.setText("Almuerzo");
 
+        rbMerienda.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbMerienda.setForeground(new java.awt.Color(0, 0, 0));
         rbMerienda.setText("Merienda");
 
+        rbCena.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbCena.setForeground(new java.awt.Color(0, 0, 0));
         rbCena.setText("Cena");
 
+        rbColacion.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
+        rbColacion.setForeground(new java.awt.Color(0, 0, 0));
         rbColacion.setText("Colacion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -162,7 +183,7 @@ public class alimentosBuscar extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rbCena)
                     .addComponent(rbColacion))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,7 +219,7 @@ public class alimentosBuscar extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(OutputJTNombre5)
                                 .addComponent(jCBSeleccionarAlimento, 0, 193, Short.MAX_VALUE))
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(314, 314, 314)
                         .addComponent(jLTituloAgregarAlimentos1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))

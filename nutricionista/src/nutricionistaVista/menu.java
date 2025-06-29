@@ -2,9 +2,6 @@ package nutricionistaVista;
 
 import Imagenes.JPanelImage;
 import java.awt.BorderLayout;
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import nutricionistaVista.alimentos.alimentosAgregar;
 import nutricionistaVista.alimentos.alimentosBuscar;
@@ -12,7 +9,6 @@ import nutricionistaVista.alimentos.alimentosEliminar;
 import nutricionistaVista.alimentos.alimentosModificar;
 import nutricionistaVista.dietas.dietasAutomatica;
 import nutricionistaVista.dietas.dietasCrearDieta;
-import nutricionistaVista.dietas.dietasModificarDieta;
 import nutricionistaVista.paciente.pacienteAgregar;
 import nutricionistaVista.paciente.pacienteBuscar;
 import nutricionistaVista.paciente.pacienteEliminar;
