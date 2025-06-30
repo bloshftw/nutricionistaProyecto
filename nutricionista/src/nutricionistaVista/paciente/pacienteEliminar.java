@@ -33,10 +33,6 @@ public class pacienteEliminar extends javax.swing.JPanel {
     }
     });
       
-      btnEliminarPaciente.addActionListener(new java.awt.event.ActionListener() {
-    public void actionPerformed(java.awt.event.ActionEvent evt) {
-    }
-});
       
     }
 
@@ -330,78 +326,69 @@ public class pacienteEliminar extends javax.swing.JPanel {
     }
     
     private void actualizarDetallesPaciente() {
-    int index = comboBoxPacientes.getSelectedIndex();
-    if(index >= 0 && index < listaPacientes.size()){
-        paciente p = listaPacientes.get(index);
-        outputEdadPaciente.setText(String.valueOf(p.getEdad()));
-        outputPesoPaciente.setText(String.valueOf(p.getPeso()));
-        outputAlturaPaciente.setText(String.valueOf((float) p.getAltura()));
-        outputSexoPaciente.setText(p.getSexo());
-        outputObjetivoPaciente.setText(p.getObjetivo());
-        
-        
-        rbCeliaco.setSelected(false);
-        rbIntolerante.setSelected(false);
-        rbVegetariano.setSelected(false);
-        //Logica para asignar Strings en base a datos booleanos
-        if(p.isCeliaco() == true){
-        rbCeliaco.setSelected(true);
+        int index = comboBoxPacientes.getSelectedIndex();
+
+        if (listaPacientes == null || listaPacientes.isEmpty()) {
+            return;
         }
-        if(p.isIntoleranteLactosa() == true){
-        rbIntolerante.setSelected(true);
+
+        if (index >= 0 && index < listaPacientes.size()) {
+            paciente p = listaPacientes.get(index);
+            outputEdadPaciente.setText(String.valueOf(p.getEdad()));
+            outputPesoPaciente.setText(String.valueOf(p.getPeso()));
+            outputAlturaPaciente.setText(String.format("%.2f", p.getAltura()));
+            outputSexoPaciente.setText(p.getSexo());
+            outputObjetivoPaciente.setText(p.getObjetivo());
+
+            rbCeliaco.setSelected(p.isCeliaco());
+            rbVegetariano.setSelected(p.isVegetariano());
+            rbIntolerante.setSelected(p.isIntoleranteLactosa());
+        } else {
+            limpiarCampos();
         }
-        if(p.isVegetariano() == true){
-        rbVegetariano.setSelected(true);
-        }
-        
-        
     }
-}
+
+    private void limpiarCampos() {
+        outputEdadPaciente.setText("");
+        outputPesoPaciente.setText("");
+        outputAlturaPaciente.setText("");
+        outputSexoPaciente.setText("");
+        outputObjetivoPaciente.setText("");
+        rbCeliaco.setSelected(false);
+        rbVegetariano.setSelected(false);
+        rbIntolerante.setSelected(false);
+    }
+
     
-    
-    private void eliminarPaciente() {
-    // Obtiene el índice seleccionado
-    int index = comboBoxPacientes.getSelectedIndex();
-    if (index >= 0 && index < listaPacientes.size()) {
-        // Recupera el paciente correspondiente
+   private void eliminarPaciente() {
+        if (listaPacientes == null || listaPacientes.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No hay pacientes para eliminar.");
+            return;
+        }
+
+        int index = comboBoxPacientes.getSelectedIndex();
+        if (index < 0 || index >= listaPacientes.size()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Seleccione un paciente válido.");
+            return;
+        }
+
         paciente p = listaPacientes.get(index);
-        
-        // Muestra un diálogo de confirmación
         int confirm = javax.swing.JOptionPane.showConfirmDialog(
-                pacienteEliminar.this,
+                this,
                 "¿Está seguro de eliminar al paciente " + p.getNombre() + " " + p.getApellido() + "?",
                 "Confirmar eliminación",
                 javax.swing.JOptionPane.YES_NO_OPTION);
-        
+
         if (confirm == javax.swing.JOptionPane.YES_OPTION) {
-            // Llama al método para eliminar el paciente de la base de datos
             boolean exito = pacienteData.eliminarPaciente(p.getIdPaciente());
             if (exito) {
-                javax.swing.JOptionPane.showMessageDialog(
-                        pacienteEliminar.this,
-                        "Paciente eliminado correctamente.");
-                // Actualiza el JComboBox
-                cargarPacientes();
-                // Limpia los campos de detalle (opcional)
-                outputEdadPaciente.setText("");
-                outputPesoPaciente.setText("");
-                outputAlturaPaciente.setText("");
-                outputSexoPaciente.setText("");
-                outputObjetivoPaciente.setText("");
-                rbCeliaco.setSelected(false);
-                rbVegetariano.setSelected(false);
-                rbIntolerante.setSelected(false);
+                javax.swing.JOptionPane.showMessageDialog(this, "Paciente eliminado correctamente.");
+                cargarPacientes(); // También actualiza la vista del paciente
             } else {
-                javax.swing.JOptionPane.showMessageDialog(
-                        pacienteEliminar.this,
-                        "Error al eliminar el paciente.");
+                javax.swing.JOptionPane.showMessageDialog(this, "Error al eliminar el paciente.");
             }
         }
-    } else {
-        javax.swing.JOptionPane.showMessageDialog(
-                pacienteEliminar.this,
-                "No hay un paciente seleccionado.");
     }
-}
+
     
 }

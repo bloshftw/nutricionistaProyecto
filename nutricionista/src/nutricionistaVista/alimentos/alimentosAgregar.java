@@ -175,16 +175,6 @@ public class alimentosAgregar extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLTituloAgregarAlimentos, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(324, 324, 324))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(288, 288, 288))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -206,13 +196,25 @@ public class alimentosAgregar extends javax.swing.JPanel {
                         .addComponent(InputJTCalorias, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                         .addComponent(InputJTNombre))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 251, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)
+                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(288, 288, 288))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLTituloAgregarAlimentos, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(242, 242, 242))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLTituloAgregarAlimentos, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLnombe1)
                     .addComponent(InputJTNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -247,13 +249,11 @@ public class alimentosAgregar extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         getAccessibleContext().setAccessibleName("jpanelAB");
@@ -265,42 +265,76 @@ public class alimentosAgregar extends javax.swing.JPanel {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
-        String nombre = InputJTNombre.getText();
-        
-        //Radio buttons para seleccionar categoria
-        
-        String categoria = "";
-        
-        if (rbDesayuno.isSelected()){
-        categoria = "D";
-        } else if (rbAlmuerzo.isSelected()){
-        categoria = "A";
-        } else if (rbMerienda.isSelected()){
-        categoria = "M";
-        } else if (rbCena.isSelected()){
-        categoria = "C";
-        } else if (rbColacion.isSelected()){
-        categoria = "CO";
-        } else {
-        JOptionPane.showMessageDialog(this, "No puede seleccionar mas de uno");
-        }
-        
-        
-        double calorias = Double.parseDouble(InputJTCalorias.getText());   
-        boolean esApto = InputCBAptoVegetarianos.isSelected(); 
-        boolean esBajo = InputCBLacteo.isSelected();
+         String nombre = InputJTNombre.getText().trim();
 
-        alimento alim = new alimento(nombre, categoria, calorias, esApto, esBajo);
+          if (nombre.isEmpty()){
+              JOptionPane.showMessageDialog(this, "El nombre del alimento no puede estar vacío.");
+              return;
+          }
 
-        alimentoData alimData = new alimentoData();
-        boolean exito = alimData.insertarAlimento(alim);
-    
-        if(exito){
-            JOptionPane.showMessageDialog(this, "Alimento añadido con exito!");
-        }else{
-            JOptionPane.showMessageDialog(this, "Error al agregar el alimento");
-        }
-        
+          // Validar que solo un tipo de comida esté seleccionado
+          int contadorSeleccionados = 0;
+          String categoria = "";
+          if (rbDesayuno.isSelected()) {
+              categoria = "D";
+              contadorSeleccionados++;
+          }
+          if (rbAlmuerzo.isSelected()) {
+              categoria = "A";
+              contadorSeleccionados++;
+          }
+          if (rbMerienda.isSelected()) {
+              categoria = "M";
+              contadorSeleccionados++;
+          }
+          if (rbCena.isSelected()) {
+              categoria = "C";
+              contadorSeleccionados++;
+          }
+          if (rbColacion.isSelected()) {
+              categoria = "CO";
+              contadorSeleccionados++;
+          }
+
+          if (contadorSeleccionados == 0) {
+              JOptionPane.showMessageDialog(this, "Debe seleccionar al menos un tipo de comida.");
+              return;
+          } else if (contadorSeleccionados > 1) {
+              JOptionPane.showMessageDialog(this, "Solo puede seleccionar un tipo de comida.");
+              return;
+          }
+
+          String caloriasTexto = InputJTCalorias.getText().trim();
+          if (caloriasTexto.isEmpty()) {
+              JOptionPane.showMessageDialog(this, "Debe ingresar las calorías.");
+              return;
+          }
+
+          double calorias;
+          try {
+              calorias = Double.parseDouble(caloriasTexto);
+              if (calorias <= 0) {
+                  JOptionPane.showMessageDialog(this, "Las calorías deben ser un número positivo.");
+                  return;
+              }
+          } catch (NumberFormatException e) {
+              JOptionPane.showMessageDialog(this, "Las calorías deben ser un número válido.");
+              return;
+          }
+
+          boolean esApto = InputCBAptoVegetarianos.isSelected();
+          boolean esLacteo = InputCBLacteo.isSelected();
+
+          alimento nuevoAlimento = new alimento(nombre, categoria, calorias, esApto, esLacteo);
+          alimentoData alimData = new alimentoData();
+
+          boolean exito = alimData.insertarAlimento(nuevoAlimento);
+          if (exito) {
+              JOptionPane.showMessageDialog(this, "Alimento añadido con éxito.");
+              btnLimpiarActionPerformed(null); // Limpia el formulario después de éxito
+          } else {
+              JOptionPane.showMessageDialog(this, "Error al agregar el alimento. Intente nuevamente.");
+          }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed

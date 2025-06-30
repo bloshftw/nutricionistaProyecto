@@ -381,50 +381,85 @@ JOptionPane.showMessageDialog(this, "Formulario limpiado correctamente.");
     }
     
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        String nombre = inputNombre.getText().trim();
+            String apellido = inputApellido.getText().trim();
 
-        String nombre = inputNombre.getText();
-        String apellido = inputApellido.getText();
-        int edad = Integer.parseInt(inputEdad.getText());
-        double peso = Double.parseDouble(inputPesoActual.getText());
-        double altura = Double.parseDouble(inputAltura.getText());
-        String sexo = "";
-        
-        //Definir el sexo
-        if (inputHombre.isSelected()){
-        sexo = "hombre";
-        } else if (inputMujer.isSelected()){
-        sexo = "mujer";
-        }
-        
-        //Definir El objetivo
-        
-        String objetivo = "";
-        
-        if (inputSubirPeso.isSelected()){
-        objetivo = "subir";
-        } else if (inputBajarPeso.isSelected()){
-        objetivo = "bajar";
-        } else if (inputMantenerPeso.isSelected()){
-        objetivo = "mantener";
-        }
-        
-        boolean vegetariano = inputVegetariano.isSelected();
-        boolean celiaco = inputCeliaco.isSelected();
-        boolean intoleranteLactosa = inputIntolerante.isSelected();
-        
-        //Se crea el objeto paciente
-        paciente pac = new paciente(nombre, apellido, edad, peso, altura, sexo, objetivo, vegetariano, celiaco, intoleranteLactosa);
-        
-        //Se inicializa el objeto que contiene la funcion para insertar pacientes
-        pacienteData pacData = new pacienteData();
-        
-        boolean exito = pacData.insertarPaciente(pac);
-        
-        if (exito = true){
-        JOptionPane.showMessageDialog(this, "Paciente añadido con exito!");
-        } else {
-        JOptionPane.showMessageDialog(this, "Hubo un error al agregar el paciente");
-        }
+            // Validación de campos vacíos
+            if (nombre.isEmpty() || apellido.isEmpty() || 
+                inputEdad.getText().trim().isEmpty() || 
+                inputAltura.getText().trim().isEmpty() || 
+                inputPesoActual.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Todos los campos deben estar completos.");
+                return;
+            }
+
+            // Validación de valores numéricos
+            int edad;
+            double peso, altura;
+            try {
+                edad = Integer.parseInt(inputEdad.getText().trim());
+                peso = Double.parseDouble(inputPesoActual.getText().trim());
+                altura = Double.parseDouble(inputAltura.getText().trim());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Edad, peso y altura deben ser valores numéricos.");
+                return;
+            }
+
+            // Validación de rangos lógicos
+            if (edad < 0 || edad > 120) {
+                JOptionPane.showMessageDialog(this, "Edad inválida. Ingrese un valor entre 0 y 120 años.");
+                return;
+            }
+
+            if (peso < 20 || peso > 400) {
+                JOptionPane.showMessageDialog(this, "Peso inválido. Ingrese un valor entre 20kg y 400kg.");
+                return;
+            }
+
+            if (altura < 50 || altura > 300) {
+                JOptionPane.showMessageDialog(this, "Altura inválida. Ingrese un valor entre 50cm y 300cm.");
+                return;
+            }
+
+
+            String sexo = "";
+            if (inputHombre.isSelected()) {
+                sexo = "hombre";
+            } else if (inputMujer.isSelected()) {
+                sexo = "mujer";
+            } else {
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un género.");
+                return;
+            }
+            String objetivo = "";
+            if (inputSubirPeso.isSelected()) {
+                objetivo = "subir";
+            } else if (inputBajarPeso.isSelected()) {
+                objetivo = "bajar";
+            } else if (inputMantenerPeso.isSelected()) {
+                objetivo = "mantener";
+            } else {
+                JOptionPane.showMessageDialog(this, "Debe seleccionar un objetivo.");
+                return;
+            }
+
+            boolean vegetariano = inputVegetariano.isSelected();
+            boolean celiaco = inputCeliaco.isSelected();
+            boolean intoleranteLactosa = inputIntolerante.isSelected();
+
+            // Crear el objeto paciente
+            paciente pac = new paciente(nombre, apellido, edad, peso, altura, sexo, objetivo, vegetariano, celiaco, intoleranteLactosa);
+
+            // Insertar en la base de datos
+            pacienteData pacData = new pacienteData();
+            boolean exito = pacData.insertarPaciente(pac);
+
+            if (exito) {
+                JOptionPane.showMessageDialog(this, "Paciente añadido con éxito.");
+                limpiar(); // Limpia el formulario tras guardar correctamente
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al guardar el paciente.");
+            }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
