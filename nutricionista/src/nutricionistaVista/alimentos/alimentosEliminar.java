@@ -278,14 +278,12 @@ public class alimentosEliminar extends javax.swing.JPanel {
     }//GEN-LAST:event_jCBSeleccionarAlimento1ActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-         OutputJTNombre6.setText("");
-          //Botones
+        OutputJTNombre6.setText("");
         rbDesayuno.setSelected(false);
         rbAlmuerzo.setSelected(false);
         rbMerienda.setSelected(false);
         rbCena.setSelected(false);
         rbColacion.setSelected(false);
-        //Botones
         OutputJTCalorias6.setText("");
         OutputCBAptoVegetariano6.setSelected(false);
         OutputCBLacteo6.setSelected(false);
@@ -293,34 +291,43 @@ public class alimentosEliminar extends javax.swing.JPanel {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnModificar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar5ActionPerformed
-   
-            String nombreSel = (String) jCBSeleccionarAlimento1.getSelectedItem();
-            if (nombreSel == null) return;
+        String nombreSel = (String) jCBSeleccionarAlimento1.getSelectedItem();
 
-            alimento sel = null;
-            for (alimento a : alimentos) {
-                if (a.getNombre().equals(nombreSel)) {
-                    sel = a;
-                    break;
-                }
+        if (nombreSel == null || nombreSel.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un alimento para eliminar.");
+            return;
+        }
+        alimento sel = null;
+        for (alimento a : alimentos) {
+            if (a.getNombre().equals(nombreSel)) {
+                sel = a;
+                break;
             }
-            if (sel == null) return;
+        }
+        if (sel == null) {
+            JOptionPane.showMessageDialog(this, "El alimento seleccionado no se encuentra en la lista.");
+            return;
+        }
+        int resp = JOptionPane.showConfirmDialog(
+            this,
+            "¿Está seguro que desea eliminar \"" + sel.getNombre() + "\"?",
+            "Confirmar eliminación",
+            JOptionPane.YES_NO_OPTION
+        );
+        if (resp != JOptionPane.YES_OPTION) {
+            return;
+        }
+        alimentoData ad = new alimentoData();
+        boolean eliminado = ad.eliminarAlimento(sel.getIdAlimento());
 
-            int resp = JOptionPane.showConfirmDialog(this,
-                "¿Eliminar “" + sel.getNombre() + "”?",
-                "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
-            if (resp != JOptionPane.YES_OPTION) return;
-
-            alimentoData ad = new alimentoData();
-            boolean ok = ad.eliminarAlimento(sel.getIdAlimento());
-            if (ok) {
-                JOptionPane.showMessageDialog(this, "Alimento eliminado.");
-                cargarCombo();
-
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al eliminar.");
-            }
-     
+        if (eliminado) {
+            JOptionPane.showMessageDialog(this, "Alimento eliminado con éxito.");
+            cargarCombo(); 
+            btnLimpiarActionPerformed(null); 
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al eliminar el alimento. Intente nuevamente.");
+        }
+    
     }//GEN-LAST:event_btnModificar5ActionPerformed
 
 
